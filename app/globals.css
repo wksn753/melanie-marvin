@@ -590,3 +590,104 @@ footer a {display:inline-flex;align-items:center;gap:8px}
 .floral-bottom-left,.floral-bottom-right{width:clamp(156px,20vw,280px);height:clamp(235px,36vw,440px)}
 @media(max-width:680px){.floral-top-left,.floral-top-right{width:clamp(132px,39dvw,190px);height:clamp(140px,43dvw,210px)}.floral-bottom-left,.floral-bottom-right{width:clamp(122px,37dvw,190px);height:clamp(175px,54dvw,270px)}}
 @media(max-width:680px){.floral-top-left,.floral-top-right{width:clamp(110px,34dvw,155px);height:clamp(115px,37dvw,165px)}}
+
+/* V5 — editorial photo storytelling and confirmed wedding locations. */
+.hero-locations {font:500 clamp(11px,1.1vw,14px)/1.5 var(--serif);color:#71806f;letter-spacing:.04em;margin:6px auto 0;text-align:center;max-width:460px}
+.hero-locations span {padding:0 .55em;color:#b59a78}
+.hero .hero-date{margin-top:20px;margin-bottom:6px}
+.hero .hero-city{margin:13px 0 4px}
+.hero .hero-cta{margin-top:22px}
+
+.story-photo-interlude {margin:clamp(60px,9vw,120px) 0 0;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);min-height:clamp(370px,45vw,575px);background:#f0ede3;overflow:hidden}
+.story-photo-interlude-image {position:relative;min-height:400px;overflow:hidden}
+.story-photo-interlude-image img {object-fit:cover;object-position:center 40%;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.story-photo-interlude:hover img {transform:scale(1.035)}
+.story-photo-interlude figcaption {display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:clamp(28px,6vw,95px);background:radial-gradient(circle at 78% 25%,#fcfaf1,#e8e7d9)}
+.story-photo-interlude figcaption h3 {font-size:clamp(55px,6vw,94px);line-height:.93;margin:20px 0 25px}
+.story-photo-interlude figcaption h3 em {font-family:var(--script);font-size:1.16em;font-style:normal;color:#ac8573;font-weight:400}
+.story-photo-interlude figcaption>p:not(.eyebrow){font:italic clamp(20px,2.2vw,29px)/1.5 var(--serif);max-width:350px;color:#677263}
+.story-photo-interlude figcaption>span{font:600 9px/1.5 var(--sans);letter-spacing:.24em;color:#a39b85;margin-top:28px}
+
+.gallery-section {background:#f1f1e8;padding:clamp(75px,8vw,130px) 0 clamp(90px,10vw,155px)}
+.story-gallery {display:grid;grid-template-columns:1fr 1.08fr;align-items:center;gap:clamp(16px,3.8vw,65px)}
+.story-gallery-frame {min-width:0;margin:0}
+.story-gallery-photo {position:relative;overflow:hidden;background:#deddd0;border:clamp(6px,.75vw,12px) solid #fbf9f3;box-shadow:0 17px 40px rgba(52,63,44,.075)}
+.story-gallery-portrait .story-gallery-photo{aspect-ratio:3/4.15}
+.story-gallery-landscape .story-gallery-photo{aspect-ratio:1.27; margin-top:clamp(40px,7vw,100px)}
+.story-gallery-photo img{object-fit:cover;transition:transform 1.25s cubic-bezier(.2,.7,.2,1)}
+.story-gallery-portrait .story-gallery-photo img{object-position:center 44%}
+.story-gallery-landscape .story-gallery-photo img{object-position:center 45%}
+.story-gallery-frame:hover img{transform:scale(1.035)}
+.story-gallery figcaption{display:flex;flex-direction:column;gap:7px;margin:21px 5px 0}
+.story-gallery figcaption span{font:600 9px/1.5 var(--sans);letter-spacing:.2em;color:#899280}
+.story-gallery figcaption em{font:italic 29px/1.15 var(--serif);color:#4a6250}
+
+.wedding-places {max-width:1030px;margin:65px auto 0;display:grid;grid-template-columns:minmax(220px,.7fr) minmax(0,1.5fr);border-block:1px solid #cecdbf}
+.save-date-panel {padding:clamp(36px,4vw,70px) clamp(20px,3vw,50px);text-align:center;border-right:1px solid #cecdbf;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.save-date-panel strong{font:300 clamp(90px,12vw,155px)/1 var(--serif);color:#415e4a;margin:12px 0 0}
+.save-date-panel>span{font:32px/1.1 var(--serif);color:#586d58}
+.save-date-panel>p:not(.eyebrow){font:18px/1.4 var(--serif);color:#858878;margin:23px 0 15px}
+.venue-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.venue-stop{padding:clamp(32px,4vw,62px) clamp(17px,2.9vw,42px);display:flex;flex-direction:column;align-items:flex-start;min-width:0}
+.venue-stop:first-child{border-right:1px solid #cecdbf}
+.venue-stop>svg{color:#ad9371;margin:17px 0 20px}
+.venue-number{font:700 9px/1.5 var(--sans);letter-spacing:.23em;color:#8d947b}
+.venue-stop h3{font:400 clamp(30px,3.2vw,48px)/1 var(--serif);color:#3a5541;margin:0 0 12px}
+.venue-stop p {font:18px/1.45 var(--serif);color:#606d5e;margin:0 0 8px}
+.venue-time{font:italic 16px/1.5 var(--serif);color:#868d7d;min-height:3em;margin:7px 0 19px}
+.venue-stop .text-link{display:inline-flex;margin-top:auto;align-items:center;gap:8px}
+.schedule-note{font:italic 18px/1.5 var(--serif);color:#858b7b;max-width:235px;margin-top:25px}
+.timeline-time{white-space:normal;line-height:1.6}
+.dress-code-inline{max-width:680px;margin:95px auto 0;display:grid;grid-template-columns:180px 1fr;align-items:center;gap:45px;border-top:1px solid #d7d4c4;padding-top:35px}
+.dress-code-inline img{width:180px;height:auto;mix-blend-mode:multiply}
+.dress-code-inline h3{font:400 clamp(36px,4vw,55px)/1.03 var(--serif);margin:12px 0 13px;color:#465b44}
+.dress-code-inline h3 em{font-family:var(--script);color:#aa8770;font-style:normal}
+.dress-code-inline div>p:last-child{font:18px/1.6 var(--serif);color:#727b6d}
+
+.promise-photo{position:relative;min-height:clamp(500px,68dvh,790px);isolation:isolate;display:flex;align-items:end;overflow:hidden;background:#8e9ea0}
+.promise-photo>img{object-fit:cover;object-position:center 44%;z-index:-2}
+.promise-photo:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(16,38,34,.78),rgba(16,38,34,.14) 52%,transparent 80%)}
+.promise-photo-copy{padding:clamp(30px,6vw,95px);color:#fff;max-width:850px}
+.promise-photo-copy .eyebrow{color:#ebddc0}
+.promise-photo-copy h2{color:#fff;font:400 clamp(58px,7vw,105px)/.98 var(--serif);margin:20px 0 25px}
+.promise-photo-copy h2 em{font-family:var(--script);font-weight:400;font-style:normal;color:#f4d6b7}
+.promise-photo-copy>span{font:600 11px/1.7 var(--sans);letter-spacing:.33em;color:#ebddc0}
+
+@media(max-width:960px){
+  .wedding-places{grid-template-columns:1fr}
+  .save-date-panel{border-right:0;border-bottom:1px solid #cecdbf;padding:40px}
+  .save-date-panel strong{font-size:105px}
+}
+@media(max-width:700px){
+  .hero-locations{font-size:11px;max-width:315px;padding:0 9px}
+  .story-photo-interlude{grid-template-columns:1fr;margin-top:67px}
+  .story-photo-interlude-image{min-height:clamp(280px,78vw,440px)}
+  .story-photo-interlude figcaption{padding:53px 28px 60px;align-items:center;text-align:center}
+  .story-photo-interlude figcaption h3{font-size:clamp(58px,13vw,75px)}
+  .story-gallery{grid-template-columns:1fr;gap:38px}
+  .story-gallery-landscape .story-gallery-photo{margin-top:5px}
+  .story-gallery-portrait{width:min(88%,440px);margin:0 auto}
+  .story-gallery-portrait .story-gallery-photo{aspect-ratio:3/3.8}
+  .story-gallery-landscape .story-gallery-photo{aspect-ratio:1.15}
+  .gallery-section .section-header{gap:15px}
+  .venue-pair{grid-template-columns:1fr}
+  .venue-stop{padding:42px 30px;border-right:0!important}
+  .venue-stop:first-child{border-bottom:1px solid #cecdbf}
+  .venue-time{min-height:0}
+  .schedule{margin-top:80px}
+  .dress-code-inline{grid-template-columns:1fr;gap:5px;margin-top:70px;text-align:center;padding-top:20px}
+  .dress-code-inline img{margin:0 auto}
+  .promise-photo{min-height:clamp(530px,77dvh,740px)}
+  .promise-photo>img{object-position:53% 45%}
+  .promise-photo-copy{padding:30px 25px 50px}
+  .promise-photo-copy h2{font-size:clamp(56px,13vw,84px)}
+}
+@media(max-width:390px){
+  .hero .hero-center{padding-top:clamp(110px,17dvh,160px);padding-bottom:105px}
+  .hero .hero-center h1{font-size:clamp(56px,15vw,70px)}
+  .hero .hero-date{margin-top:12px}
+  .hero-locations span{padding:0 .15em}
+}
+@media(prefers-reduced-motion:reduce){
+  .story-photo-interlude-image img,.story-gallery-photo img{transition:none}
+}

@@ -1,38 +1,18 @@
-"use client";
-
-import { useState } from "react";
 import Image from "next/image";
 import { wedding } from "@/config/wedding";
-import { BotanicalSprig, TinyFlower } from "./Botanicals";
 
-/** No generic mock images or 404s while the couple's portraits are being chosen. */
-function BotanicalInterlude() {
-  return <div className="gallery-interlude" data-reveal="up">
-    <div className="gallery-garden" aria-hidden="true">
-      <BotanicalSprig className="gallery-garden-left" />
-      <BotanicalSprig className="gallery-garden-right" mirrored />
-      <div className="gallery-garden-ring"><TinyFlower/><span>M <i>&</i> M</span><small>AN ALBUM OF US</small></div>
-    </div>
-    <div className="gallery-interlude-copy">
-      <p className="eyebrow">MOMENTS MADE TO LAST</p>
-      <h3>Some memories are<br/><em>still becoming.</em></h3>
-      <p>Photographs of Marvin and Melanie will find their home here soon.</p>
-    </div>
-  </div>;
-}
-
-function ImageSlot({src, alt, caption, shape, index}: {src: string; alt: string; caption: string; shape: string; index: number}) {
-  const [broken, setBroken] = useState(false);
-  if (broken) return null;
-  return <figure className={`gallery-item gallery-${shape}`} data-reveal="up" data-reveal-delay={String(index % 3)}>
-    <div className={`gallery-image gallery-image-${index}`}>
-      <Image src={src} alt={alt} width={1280} height={854} sizes="(max-width: 680px) 50vw, 33vw" onError={() => setBroken(true)} />
-    </div>
-    <figcaption>{caption}</figcaption>
-  </figure>;
-}
-
+/** A small two-scene editorial interlude, not a wall of thumbnails. */
 export function Gallery() {
-  if (wedding.gallery.length === 0) return <BotanicalInterlude/>;
-  return <div className="gallery-grid">{wedding.gallery.map((photo, i) => <ImageSlot key={`${photo.src}-${i}`} {...photo} index={i}/>)}</div>;
+  return <div className="story-gallery">
+    {wedding.gallery.map((photo, i) => <figure
+      className={`story-gallery-frame story-gallery-${photo.shape}`}
+      key={photo.src}
+      data-reveal={i === 0 ? "left" : "right"}
+    >
+      <div className="story-gallery-photo">
+        <Image src={photo.src} alt={photo.alt} fill sizes="(max-width: 700px) 90vw, 48vw" />
+      </div>
+      <figcaption><span>{String(i + 3).padStart(2, "0")} / OUR LITTLE MOMENTS</span><em>{photo.caption}</em></figcaption>
+    </figure>)}
+  </div>;
 }

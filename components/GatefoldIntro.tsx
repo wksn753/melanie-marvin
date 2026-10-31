@@ -99,7 +99,7 @@ export function GatefoldIntro() {
               <span className="gate-names">{wedding.couple.first}<em>&</em>{wedding.couple.second}</span>
               <span className="gate-ornament"><Icon name="heart" size={25}/></span>
               <span className="gate-invitation-message">request the pleasure<br/>of your company</span>
-              <span className="gate-sentiment">as we begin our forever</span>
+              <span className="gate-sentiment">SATURDAY · 1 MAY 2027</span>
             </span>
           </span>
           <span className="gatefold-door gatefold-door-left" aria-hidden="true"><Image src="/images/gatefold-left.png" alt="" width={284} height={859} priority unoptimized draggable={false}/><LivingEmbroidery side="left" /></span>

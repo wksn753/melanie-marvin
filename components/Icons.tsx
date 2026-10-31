@@ -1,6 +1,6 @@
 import type { SVGProps } from 'react';
 
-type IconName = 'arrow-up-right' | 'arrow-right' | 'arrow-down' | 'arrow-up' | 'music' | 'chevron-down' | 'flower' | 'heart' | 'pause' | 'play' | 'volume-off' | 'check' | 'calendar' | 'map-pin';
+type IconName = 'arrow-up-right' | 'arrow-right' | 'arrow-down' | 'arrow-up' | 'music' | 'chevron-down' | 'flower' | 'heart' | 'pause' | 'play' | 'volume-off' | 'check' | 'calendar' | 'map-pin' | 'church' | 'party';
 export function Icon({name, size=18, ...props}: SVGProps<SVGSVGElement> & {name: IconName;size?:number}) {
   const common = {xmlns:'http://www.w3.org/2000/svg',width:size,height:size,viewBox:'0 0 24 24',fill:'none',stroke:'currentColor',strokeWidth:1.65,strokeLinecap:'round' as const,strokeLinejoin:'round' as const,'aria-hidden':true as const,...props};
   switch(name){
@@ -17,6 +17,8 @@ export function Icon({name, size=18, ...props}: SVGProps<SVGSVGElement> & {name:
     case 'volume-off':return <svg {...common}><path d="M11 5 6 9H3v6h3l5 4V5ZM17 9l5 6m0-6-5 6"/></svg>;
     case 'check':return <svg {...common}><path d="m5 12 4 4L19 6"/></svg>;
     case 'calendar':return <svg {...common}><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 10h18"/></svg>;
+    case 'church':return <svg {...common}><path d="M12 2v6m-3-3h6M5 22V10l7-5 7 5v12M3 22h18M9 22v-8h6v8M5 12h14"/></svg>;
+    case 'party':return <svg {...common}><path d="m3 21 9-3-6-6-3 9Zm3-9 6 6M14 4l.5 2M20 9l-2 .5M16 12l2 2M18 4l2-2M11 8l2-2"/></svg>;
     case 'map-pin':return <svg {...common}><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.4"/></svg>;
   }
 }
