@@ -1,0 +1,247 @@
+
+:root{--ivory:#fbf8f0;--paper:#f6f0e5;--sage:#526c58;--sage-dark:#324c3c;--ink:#303b30;--muted:#7d8175;--rose:#c99d9d;--line:rgba(75,93,71,.2);--serif:var(--font-wedding-serif),Georgia,'Times New Roman',serif;--sans:var(--font-wedding-sans),Arial,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ivory);color:var(--ink);font-family:var(--sans);font-size:14px;-webkit-font-smoothing:antialiased}button,input,textarea,select{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}img{max-width:100%}::selection{background:#d7dfd1;color:#304b38}section[id]{scroll-margin-top:75px}
+.header{height:80px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(24px,6vw,100px);position:relative;z-index:10;background:var(--ivory);border-bottom:1px solid rgba(84,104,80,.12)}.brand{font-family:var(--serif);font-size:27px;font-weight:500;letter-spacing:-.04em}.brand span{font-style:italic;font-weight:300;color:var(--sage)}.brand .brand-flower{font-family:serif;font-size:11px;margin-left:5px;position:relative;top:-10px;color:#b78d91}.header nav{display:flex;align-items:center;gap:36px}.header nav a{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.17em;transition:color .2s}.header nav a:hover{color:#9d7a7c}.header nav .nav-rsvp{padding:14px 22px;border:1px solid #708572;background:var(--sage-dark);color:white}.header nav .nav-rsvp:hover{background:var(--sage);color:white}.header nav .nav-rsvp span{margin-left:11px;font-size:14px}
+.eyebrow,.overline{font-size:10px;letter-spacing:.25em;line-height:1.6;font-weight:600;color:var(--sage);text-transform:uppercase}h1,h2,h3,h4,p{margin-top:0}h2,h3,h4{font-family:var(--serif);font-weight:400}h2{font-size:clamp(52px,6vw,86px);line-height:.97;letter-spacing:-.038em}h2 em,h3 em{font-weight:300;color:var(--sage);font-style:italic}.section-container{max-width:1180px;margin:0 auto;padding:0 54px}.subtle-text{color:var(--muted);font-size:11px;letter-spacing:.1em}
+.hero{min-height:785px;position:relative;display:flex;justify-content:center;overflow:hidden;isolation:isolate;background:radial-gradient(ellipse at 50% 30%,#fffcf5 0%,#f8f4e9 67%,#eeeada 100%)}.hero:before,.hero:after{content:"";position:absolute;inset:30px;border:1px solid rgba(113,123,93,.14);pointer-events:none;z-index:0}.hero:after{inset:42px;border-color:rgba(113,123,93,.1)}.hero-texture{position:absolute;inset:0;opacity:.23;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 150 150' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.6' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.2'/%3E%3C/svg%3E");pointer-events:none}.hero-botanical{width:320px;height:700px;position:absolute;z-index:1;bottom:-73px;opacity:.88;filter:drop-shadow(1px 7px 4px rgba(101,103,72,.09))}.hero-botanical-left{left:clamp(-90px,3vw,70px);transform:rotate(-13deg)}.hero-botanical-right{right:clamp(-90px,3vw,70px);transform:scaleX(-1) rotate(-13deg)}.hero-center{position:relative;z-index:2;text-align:center;padding:105px 20px 55px;max-width:780px;width:100%}.hero-center .eyebrow{letter-spacing:.31em;color:#777d6b}.ornament{display:flex;align-items:center;justify-content:center;gap:15px;margin:22px auto 12px}.ornament svg{width:30px;height:30px;opacity:.78}.ornament span{width:44px;height:1px;background:#aeb09c}.hero-intro{font-family:var(--serif);font-size:28px;font-style:italic;color:#7c816e;margin:10px 0 2px}.hero h1{font-family:var(--serif);font-size:clamp(105px,11vw,170px);font-weight:300;letter-spacing:-.07em;line-height:.7;margin:30px 0 36px;color:#3d5747}.hero h1 em{display:block;font-size:.38em;line-height:.9;letter-spacing:0;font-style:italic;color:#b8918e;position:relative;left:-1px}.hero-subtitle{font-size:10px;font-weight:600;letter-spacing:.42em;color:#737b6c;margin-bottom:31px}.hero-date{display:flex;justify-content:center;align-items:center;gap:17px;color:#425b4a}.hero-date span{font-family:var(--serif);font-size:24px;letter-spacing:.03em}.hero-date strong{font-family:var(--serif);font-size:58px;line-height:1;border-left:1px solid #9daa97;border-right:1px solid #9daa97;padding:0 21px;font-weight:300}.hero-city{margin:11px 0 25px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#777b6e}.hero-cta,.primary-button{background:var(--sage-dark);color:#fff;min-width:180px;display:inline-flex;align-items:center;justify-content:center;gap:23px;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:19px 28px;border:1px solid var(--sage-dark);transition:all .2s}.hero-cta:hover,.primary-button:hover{background:#58705a;transform:translateY(-1px)}.hero-cta span,.primary-button span{font-size:15px}.scroll-cue{margin-top:56px;display:flex;align-items:center;gap:12px;flex-direction:column;font-size:9px;letter-spacing:.25em;color:#85897c}.scroll-cue i{font:normal 24px var(--serif)}
+.countdown-section{text-align:center;background:#f0f1e8;border-top:1px solid #e5e8dc;border-bottom:1px solid #e3e6d9;padding:80px 20px 70px}.countdown-section h2{font-size:clamp(48px,5vw,72px);margin:14px 0 27px}.countdown{display:flex;justify-content:center;gap:0;max-width:630px;margin:32px auto 28px}.countdown>div{width:25%;border-right:1px solid #cad2c5}.countdown>div:last-child{border:0}.countdown strong{font-family:var(--serif);font-weight:300;font-size:clamp(51px,6vw,78px);line-height:1;display:block;color:#4a614c;font-variant-numeric:tabular-nums}.countdown span{display:block;letter-spacing:.24em;text-transform:uppercase;font-size:10px;color:#747f70;margin-top:10px}.countdown-finished{font-family:var(--serif);font-size:28px;color:var(--sage)}
+.story{padding-top:115px;padding-bottom:124px}.section-flourish{display:flex;align-items:center;gap:15px;justify-content:center;margin-bottom:75px}.section-flourish svg{width:24px;height:24px}.section-flourish span{letter-spacing:.26em;font-size:10px;color:#8e927e}.story-layout{display:grid;grid-template-columns:1.1fr .9fr;gap:75px;align-items:center}.story-title h2{margin:17px 0 0}.story-drawn-flower{font:normal 72px var(--serif);color:#c6a9a2;margin-top:15px}.story-copy{max-width:450px;margin-left:auto;padding:15px 0}.story-copy p:not(.signature){font:21px/1.75 var(--serif);color:#666c60}.story-copy .story-lead{color:#3d5747!important;font-size:32px!important;font-style:italic!important;line-height:1.2!important;margin-bottom:23px}.signature{font-size:11px;letter-spacing:.1em;color:#777f6e;margin-top:35px}.signature span{font:italic 31px var(--serif);display:block;letter-spacing:-.02em;color:var(--sage);margin-top:8px}
+.gallery-section{background:#eceee5;padding:111px 0 120px}.section-header{display:flex;justify-content:space-between;align-items:end;margin-bottom:48px}.section-header h2{margin:13px 0 0}.section-header>p{font:19px/1.55 var(--serif);color:#7f8677;margin-bottom:7px}.gallery-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}.gallery-item{min-width:0}.gallery-large{grid-row:span 2}.gallery-wide{grid-column:span 2}.gallery-image{background:#e2ded1;height:280px;position:relative;overflow:hidden;border:10px solid #f8f5ed;box-shadow:0 7px 24px rgba(73,86,65,.055)}.gallery-large .gallery-image{height:623px}.gallery-wide .gallery-image{height:280px}.gallery-image>img{display:block;width:100%;height:100%;object-fit:cover}.photo-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:radial-gradient(circle at 80% 20%,#f3dfd9,transparent 50%),linear-gradient(140deg,#c5cec0,#d4d5c6 60%,#d7c4b4);text-align:center;position:relative}.gallery-image-1 .photo-placeholder{background:radial-gradient(circle at 25% 70%,#d8b6ab,transparent 50%),linear-gradient(140deg,#d4d8c6,#ebdfcf)}.gallery-image-2 .photo-placeholder{background:radial-gradient(circle at 80% 40%,#b9c0a2,transparent 50%),linear-gradient(140deg,#e6dace,#d1bdb2)}.gallery-image-3 .photo-placeholder{background:radial-gradient(circle at 20% 25%,#ccb0ad,transparent 50%),linear-gradient(140deg,#bdc9b5,#e8ddd0)}.photo-placeholder svg{width:53px;height:53px;opacity:.75}.photo-placeholder span{font:italic 30px/1 var(--serif);color:#647463}.photo-placeholder small{font-size:9px;letter-spacing:.25em;color:#687c69;position:absolute;bottom:23px}.gallery-item>p{font:italic 20px var(--serif);color:#6d7d68;margin:13px 0 12px;text-align:center}
+.day-section{padding:120px 0 122px;background:#fcf9f1}.day-intro{text-align:center;max-width:640px;margin:0 auto 55px}.day-intro h2{margin:16px 0 20px}.day-intro>p:last-child{font:22px/1.5 var(--serif);color:#7b8175}.day-details{display:grid;grid-template-columns:1fr 1fr;gap:0;max-width:780px;margin:0 auto;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.date-card,.day-venue{text-align:center;padding:48px 40px}.date-card{border-right:1px solid var(--line)}.date-card>strong{display:block;font:300 128px/.95 var(--serif);color:#4b6850;margin:8px 0}.date-card>span:nth-of-type(2){display:block;font:26px var(--serif)}.date-divider{height:1px;background:var(--line);width:60px;margin:25px auto 22px}.date-card>p,.day-venue>p:not(.eyebrow){font:20px/1.45 var(--serif);color:#6f796e}.text-link{display:inline-block;color:var(--sage);font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;border-bottom:1px solid #9caca0;padding-bottom:7px;margin-top:5px}.text-link:hover{color:#a67e80}.day-venue h3{font-size:42px;line-height:1.05;margin:20px 0 10px}.day-venue .eyebrow{margin-top:20px}.venue-rule{height:1px;background:var(--line);width:70px;margin:28px auto}.schedule{max-width:835px;margin:115px auto 0;display:grid;grid-template-columns:.9fr 1.1fr;gap:50px}.schedule h3{font-size:53px;line-height:.98;margin:15px 0}.timeline{padding-top:4px}.timeline-item{display:grid;grid-template-columns:105px 22px 1fr;gap:20px;position:relative;min-height:100px}.timeline-item:not(:last-child):after{content:"";position:absolute;top:20px;bottom:-2px;left:135px;width:1px;background:#bbc5b9}.timeline-time{font-size:11px;letter-spacing:.08em;color:var(--sage);padding-top:5px;white-space:nowrap}.timeline-dot{height:9px;width:9px;background:#bfa2a4;border:3px solid #fcf9f1;border-radius:50%;box-shadow:0 0 0 1px #bfa2a4;margin:6px 0 0 6px;z-index:1}.timeline h4{font-size:27px;margin:0 0 4px;color:#3b533f}.timeline p{font:17px var(--serif);color:#858b7b}
+.rsvp-section{position:relative;background:#e9eee5;overflow:hidden;padding:110px 25px 125px}.rsvp-content{max-width:760px;margin:auto;text-align:center;position:relative;z-index:1}.rsvp-content h2{margin:15px 0 20px}.rsvp-flower{width:35px;height:35px;margin-top:8px}.rsvp-copy{font:22px/1.4 var(--serif);color:#747d6f;max-width:490px;margin:0 auto 18px}.rsvp-deadline{font-size:9px;letter-spacing:.23em;color:#6e7f71;font-weight:700;margin:25px 0 34px}.rsvp-plant{width:290px;height:650px;position:absolute;opacity:.45;bottom:-200px}.rsvp-plant.left{left:-125px;transform:rotate(-13deg)}.rsvp-plant.right{right:-125px}.rsvp-form{max-width:650px;margin:0 auto;text-align:left}.rsvp-choices{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin:0 0 26px}.rsvp-choices button{padding:15px;background:rgba(255,255,255,.5);border:1px solid #b6c2b2;color:var(--sage);font:italic 24px var(--serif);transition:all .2s}.rsvp-choices button.selected{background:var(--sage-dark);color:white;border-color:var(--sage-dark)}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:19px}.rsvp-form label{display:block;color:#536351;font-size:10px;letter-spacing:.13em;font-weight:700;text-transform:uppercase;margin-bottom:18px}.rsvp-form label span{color:#b38080}.rsvp-form label small{font-size:9px;letter-spacing:0;font-weight:400;text-transform:none;color:#879384}.rsvp-form input,.rsvp-form select,.rsvp-form textarea{display:block;width:100%;margin-top:10px;padding:17px 15px;border:1px solid #bfcbba;border-radius:0;background:rgba(255,255,255,.75);color:var(--ink);outline:none;font-size:13px;letter-spacing:0;font-weight:400;text-transform:none;transition:border-color .2s}.rsvp-form textarea{resize:vertical;min-height:105px}.rsvp-form input:focus,.rsvp-form select:focus,.rsvp-form textarea:focus{border-color:var(--sage-dark);box-shadow:0 0 0 2px rgba(82,108,88,.12)}.rsvp-form input::placeholder,.rsvp-form textarea::placeholder{color:#9aa398}.rsvp-submit{width:100%;border-radius:0;margin-top:4px}.rsvp-submit:disabled{opacity:.6;cursor:wait}.form-feedback{text-align:center;padding:13px 18px;margin:15px 0 0;background:#dce5d8;color:#354c37;font-size:13px;line-height:1.5}.form-feedback.error{background:#f7e8df;color:#944b42}.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.faq{padding-top:110px;padding-bottom:120px}.faq-list{border-top:1px solid var(--line)}.faq-list details{border-bottom:1px solid var(--line)}.faq-list summary{list-style:none;display:flex;justify-content:space-between;align-items:center;font:30px var(--serif);cursor:pointer;padding:23px 5px;color:#465949}.faq-list summary::-webkit-details-marker{display:none}.faq-list summary span{font:300 25px var(--sans);color:#879885}.faq-list details[open] summary span{transform:rotate(45deg)}.faq-list details p{font:19px/1.5 var(--serif);color:#7a8275;padding:0 30px 20px 5px;max-width:680px;margin:0}
+.closing{background:var(--sage-dark);color:#fff;text-align:center;padding:85px 20px 95px}.closing svg{width:30px;height:30px}.closing .eyebrow{color:#d8e5d5;margin:15px 0}.closing h2{font-size:clamp(55px,6vw,85px);margin:20px 0}.closing h2 em{color:#e8c3bb}.closing>p:last-child{font:italic 33px var(--serif);margin:27px 0 0}.closing>p:last-child span{color:#d8aaa9}footer{min-height:88px;background:#273b2e;color:#e7eee3;padding:20px clamp(20px,6vw,100px);display:flex;justify-content:space-between;align-items:center;gap:20px}footer span:first-child{font:italic 24px var(--serif)}footer span:nth-child(2),footer a{font-size:9px;letter-spacing:.2em}
+@media(max-width:950px){.hero-botanical{width:270px;opacity:.6}.hero-botanical-left{left:-100px}.hero-botanical-right{right:-100px}.hero h1{font-size:130px}.section-container{padding:0 34px}.story-layout{gap:35px}.schedule{gap:20px}}
+@media(max-width:680px){.header{height:69px;padding:0 18px}.header nav{gap:15px}.header nav>a:not(.nav-rsvp){display:none}.header nav .nav-rsvp{padding:12px 18px}.hero{min-height:660px}.hero:before{inset:13px}.hero:after{inset:21px}.hero-center{padding-top:84px}.hero-botanical{width:190px;height:520px;bottom:12px;opacity:.37}.hero-botanical-left{left:-98px}.hero-botanical-right{right:-98px}.hero h1{font-size:clamp(94px,18vw,130px);margin:26px 0 26px}.hero-intro{font-size:23px}.hero-center .eyebrow{font-size:8px}.hero-subtitle{font-size:9px;margin-bottom:26px}.hero-date strong{font-size:47px;padding:0 16px}.hero-date span{font-size:19px}.hero-city{font-size:10px}.hero-cta{padding:16px 26px}.scroll-cue{margin-top:43px}.countdown-section{padding:67px 15px 59px}.countdown{margin-top:35px}.countdown strong{font-size:49px}.countdown span{font-size:8px;letter-spacing:.15em}.section-container{padding:0 25px}.story{padding-top:80px;padding-bottom:83px}.section-flourish{margin-bottom:40px}.story-layout{grid-template-columns:1fr;gap:23px}.story-title h2,h2{font-size:clamp(50px,10vw,65px)}.story-drawn-flower{display:none}.story-copy{margin:0}.story-copy p:not(.signature){font-size:19px}.gallery-section{padding:82px 0}.section-header{display:block;margin-bottom:32px}.section-header>p{margin-top:20px}.gallery-grid{grid-template-columns:1fr 1fr;gap:12px}.gallery-large{grid-row:span 2}.gallery-wide{grid-column:span 2}.gallery-image{border-width:5px;height:175px}.gallery-large .gallery-image{height:388px}.gallery-wide .gallery-image{height:220px}.photo-placeholder span{font-size:23px}.gallery-item>p{font-size:15px}.day-section{padding:83px 0 84px}.day-intro{margin-bottom:36px}.day-intro>p:last-child{font-size:20px}.day-details{grid-template-columns:1fr}.date-card,.day-venue{padding:36px 15px}.date-card{border-right:0;border-bottom:1px solid var(--line)}.date-card>strong{font-size:105px}.schedule{margin-top:65px;grid-template-columns:1fr;gap:24px}.schedule h3{font-size:46px}.timeline-item{grid-template-columns:88px 18px 1fr;gap:15px}.timeline-item:not(:last-child):after{left:112px}.timeline h4{font-size:24px}.timeline p{font-size:16px}.rsvp-section{padding:83px 19px 90px}.rsvp-plant{opacity:.15}.rsvp-choices button{font-size:18px;padding:13px 5px}.form-row{grid-template-columns:1fr;gap:0}.rsvp-copy{font-size:20px}.faq{padding-top:80px;padding-bottom:90px}.faq-list summary{font-size:25px}.closing{padding:80px 20px}footer{flex-wrap:wrap;padding:23px 20px;justify-content:center;text-align:center}footer span:nth-child(2){display:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* MELANIE & MARVIN — BOTANICAL GATEFOLD INVITATION */
+.gatefold-loading {position:fixed;inset:0;z-index:200;background:#f4f0e6}
+.gatefold-overlay {position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;overflow-y:auto;overscroll-behavior:contain;background:radial-gradient(ellipse at 50% 45%,#fffefa 0%,#f8f5ed 52%,#ece8de 100%);isolation:isolate}
+.gatefold-overlay:before {content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.2;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.66' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='.23'/%3E%3C/svg%3E")}
+.gatefold-scene {width:100%;max-width:750px;min-height:min(100%,840px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;margin:auto;padding:30px 16px 25px}
+.gatefold-eyebrow {font-family:var(--sans);color:#526855;letter-spacing:.4em;font-size:clamp(8px,1.45vw,11px);font-weight:700;margin:0 0 15px}
+.gatefold-divider {display:flex;gap:17px;align-items:center;justify-content:center;margin:0 auto 12px;color:#b49c73}
+.gatefold-divider span {width:55px;height:1px;background:#d8c7ad}
+.gatefold-divider svg {width:21px;height:21px;opacity:.8;filter:sepia(.4)}
+.gatefold-stage {display:block;width:min(407px,80vw,calc((100dvh - 198px) * .71));min-width:205px;aspect-ratio:.71;position:relative;border:0;background:transparent;appearance:none;margin:0 auto;padding:0;cursor:pointer;perspective:1400px;overflow:visible;transition:transform .35s ease;filter:drop-shadow(0 24px 22px rgba(73,63,49,.13));-webkit-tap-highlight-color:transparent}
+.gatefold-stage:focus-visible {outline:2px solid #415b46;outline-offset:12px}
+.gatefold-stage:disabled {cursor:default}
+.gatefold-closed .gatefold-stage:hover {transform:translateY(-4px)}
+.gatefold-card {position:absolute;inset:0;display:block;transform-style:preserve-3d;transform:translateZ(0)}
+.gatefold-inner {position:absolute;inset:3px 1px;background:linear-gradient(107deg,rgba(244,235,215,.2),transparent 30%),repeating-linear-gradient(90deg,rgba(173,148,98,.028) 0 1px,transparent 1px 4px),#faf5e9;box-shadow:inset 0 0 0 7px #f3eadb,inset 0 0 0 8px rgba(172,137,84,.45),0 13px 24px rgba(81,64,47,.15);display:grid;place-items:center;overflow:hidden}
+.gatefold-inner:after {content:"";position:absolute;inset:15px;border:1px solid #cbb88f99;pointer-events:none}
+.gatefold-inner-content {display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;z-index:2;width:100%;height:100%;padding:30px 21px;opacity:.86;transition:opacity 1s ease .4s, transform 1s ease .4s;transform:scale(.96)}
+.gatefold-opening .gatefold-inner-content {opacity:1;transform:scale(1)}
+.gate-inner-botanical {position:absolute;height:36%;width:27%;opacity:.42;pointer-events:none;filter:sepia(.25)}
+.gate-inner-botanical.left {top:-12%;left:-9%;transform:rotate(60deg)}
+.gate-inner-botanical.right {bottom:-14%;right:-9%;transform:rotate(59deg)}
+.gate-inside-eyebrow {color:#7e765e;font-family:var(--sans);font-size:clamp(7px,1.1vw,9px);line-height:1.5;letter-spacing:.26em;font-weight:600;margin:0 0 20px}
+.gate-inner-flower {font:normal 35px/1 var(--serif);color:#b9a177;margin-bottom:10px}
+.gate-names {font-family:var(--serif);font-size:clamp(41px,7vw,64px);font-weight:400;line-height:.92;letter-spacing:-.05em;color:#765c42;display:flex;flex-direction:column;align-items:center;white-space:nowrap;text-shadow:0 1px #fff}
+.gate-names em {font-family:var(--serif);font-size:.6em;color:#b89b70;font-style:italic;line-height:.85;padding:5px 0;letter-spacing:0}
+.gate-ornament {color:#b99c77;font:35px var(--serif);margin:10px 0 8px}
+.gate-invitation-message {font:italic clamp(17px,2.4vw,23px)/1.2 var(--serif);color:#6d705c;margin-bottom:12px}
+.gate-sentiment {font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#9d866b}
+.gatefold-door {position:absolute;top:0;bottom:0;width:calc(50% + 10px);z-index:4;display:block;backface-visibility:hidden;transform-style:preserve-3d;transition:transform 1.85s cubic-bezier(.22,.68,.17,1),filter 1s ease;will-change:transform}
+.gatefold-door img {display:block;width:100%;height:100%;object-fit:fill;pointer-events:none;user-select:none}
+.gatefold-door-left {left:0;transform-origin:0% 50%;filter:drop-shadow(5px 3px 4px rgba(70,54,37,.14))}
+.gatefold-door-right {right:0;transform-origin:100% 50%;filter:drop-shadow(-5px 3px 4px rgba(70,54,37,.14))}
+.gatefold-opening .gatefold-door-left {transform:rotateY(-157deg);filter:drop-shadow(-9px 7px 5px rgba(70,54,37,.13))}
+.gatefold-opening .gatefold-door-right {transform:rotateY(157deg);filter:drop-shadow(9px 7px 5px rgba(70,54,37,.13))}
+.gatefold-seal {position:absolute;z-index:6;left:50%;top:51%;transform:translate(-50%,-50%);width:61px;height:61px;border-radius:50%;display:flex;align-items:center;justify-content:center;gap:3px;color:#9d8157;background:radial-gradient(circle at 40% 33%,#fffaf0,#e8ddc9);border:3px double #c7b491;box-shadow:0 4px 11px rgba(85,64,40,.21);font:italic 17px var(--serif);transition:opacity .26s ease,transform .6s ease}
+.gatefold-seal i {font-size:14px;color:#a98d68}
+.gatefold-opening .gatefold-seal {opacity:0;transform:translate(-50%,-50%) scale(.7)}
+.gatefold-open-btn {margin:25px 0 0;min-width:265px;display:inline-flex;align-items:center;justify-content:center;gap:25px;background:#2e4939;color:#fff;border:1px solid #e9deca;outline:2px solid #375543;outline-offset:-5px;box-shadow:0 5px 15px #4f584224;padding:18px 29px;font:600 11px var(--sans);letter-spacing:.2em;transition:background .3s, transform .3s}
+.gatefold-open-btn:not(:disabled):hover {background:#4b6550;transform:translateY(-2px)}
+.gatefold-open-btn:disabled {cursor:default}
+.gatefold-open-btn span {font:normal 27px/10px var(--serif)}
+.gatefold-caption {color:#8b907e;font:italic clamp(21px,3vw,25px) var(--serif);margin:23px 0 4px}
+.gatefold-footer-ornament {font:20px var(--serif);color:#b8a079;letter-spacing:.25em}
+.replay-invitation {background:transparent;color:#596c56;padding:8px 0;border:0;border-bottom:1px solid #c2c9b9;font-size:10px;text-transform:uppercase;letter-spacing:.13em;font-weight:600}
+.replay-invitation span {font-size:15px;color:#b59d8b;margin-left:4px}
+.date-coming-soon {display:inline-block;border-top:1px solid #a6b1a3;border-bottom:1px solid #a6b1a3;padding:15px 26px;font-size:11px;font-weight:600;color:#536c58;letter-spacing:.21em;margin:2px 0}
+.hero h1 {font-size:clamp(88px,10.5vw,156px)}
+@media (max-width:680px) {
+ .gatefold-scene {padding:23px 12px 17px}
+ .gatefold-eyebrow {letter-spacing:.27em}
+ .gatefold-stage {width:min(340px,84vw,calc((100dvh - 190px) * .71))}
+ .gatefold-divider {margin-bottom:9px}
+ .gatefold-open-btn {margin-top:17px;padding:16px 24px;min-width:245px}
+ .gatefold-caption {margin-top:17px}
+ .gatefold-inner-content {padding:20px 10px}
+ .gate-names {font-size:clamp(30px,10.2vw,51px)}
+ .gate-inside-eyebrow {font-size:7px;margin-bottom:12px}
+ .gate-inner-flower {margin-bottom:3px}
+ .gatefold-seal {width:54px;height:54px;font-size:15px}
+ .hero h1 {font-size:clamp(77px,17vw,116px)}
+ .replay-invitation {font-size:9px;letter-spacing:.08em}
+ .header nav {gap:12px}
+}
+@media (max-height:620px) {
+ .gatefold-scene {padding:14px 12px}
+ .gatefold-divider {margin-bottom:5px}
+ .gatefold-open-btn {margin-top:12px;padding:14px 20px}
+ .gatefold-caption {margin-top:12px}
+}
+
+/* Form security UX and keyboard focus. */
+.captcha-control{display:flex;justify-content:center;margin:13px 0 20px}.rsvp-privacy-note{text-align:center;font-size:12px;line-height:1.7;color:#607260;margin:4px 0 18px}.rsvp-form button:focus-visible,.gatefold-overlay button:focus-visible,.header a:focus-visible{outline:3px solid #a88b51;outline-offset:4px}
+
+/* ---- V3: Fluid viewport layout, living botanicals & progressive scroll reveals ---- */
+html {max-width:100%;overflow-x:clip}
+body {min-width:0;max-width:100%;overflow-x:clip}
+main {min-width:0}
+
+/* The dialog must never assume a 375px phone or a fixed browser height. */
+.gatefold-overlay {
+  inset:0;
+  width:100vw;
+  height:100vh;
+  width:100dvw;
+  height:100dvh;
+  min-height:0;
+  overflow-x:clip;
+  overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
+  padding:0;
+  align-items:stretch;
+  justify-content:center;
+}
+.gatefold-scene {
+  width:100%;
+  max-width:100dvw;
+  min-height:100vh;
+  min-height:100dvh;
+  height:auto;
+  margin:auto;
+  padding:clamp(12px,2.4dvh,28px) 18px;
+  flex-shrink:0;
+  position:relative;
+  isolation:isolate;
+}
+.gatefold-stage {
+  /* Keep the *entire card* in view on 207px/320px phones, compact laptops and tablets. */
+  min-width:0;
+  max-width:100%;
+  flex:0 0 auto;
+  width:min(407px, calc(100dvw - 36px), max(145px, calc((100dvh - 210px) * .71)));
+  aspect-ratio: .71;
+  height:auto;
+  container-type:inline-size;
+  touch-action:manipulation;
+}
+.gatefold-card {width:100%;height:100%}
+.gatefold-door {width:calc(50% + 5px)}
+.gatefold-open-btn {
+  flex-shrink:0;
+  min-width:0;
+  width:min(290px,calc(100dvw - 36px));
+  max-width:100%;
+  min-height:48px;
+  margin-top:clamp(12px,2.3dvh,22px);
+  padding:14px 16px;
+  font-size:clamp(8px,2.6dvw,11px);
+  letter-spacing:clamp(.07em,.4dvw,.2em);
+  gap:clamp(10px,2.8dvw,25px);
+}
+.gatefold-caption {max-width:calc(100dvw - 24px);margin-top:clamp(10px,2.1dvh,21px);font-size:clamp(15px,4.5dvw,25px)}
+.gatefold-eyebrow {max-width:100%;font-size:clamp(7px,1.6dvw,11px);letter-spacing:clamp(.1em,.8dvw,.4em);margin-bottom:clamp(7px,1.5dvh,13px)}
+.gatefold-divider {margin-bottom:clamp(7px,1.5dvh,14px);gap:clamp(9px,2dvw,17px)}
+.gatefold-divider span {width:clamp(18px,8dvw,55px)}
+.gatefold-footer-ornament {font-size:clamp(14px,2dvw,20px)}
+.gatefold-seal {width:clamp(32px,14cqw,61px);height:clamp(32px,14cqw,61px);font-size:clamp(10px,4cqw,17px);gap:2px}
+.gatefold-seal i {font-size:.8em}
+.gate-inside-eyebrow {font-size:clamp(6px,2cqw,9px);letter-spacing:.13em;margin-bottom:clamp(3px,4cqh,17px)}
+.gate-names {font-size:clamp(16px,15cqw,64px)}
+.gate-inner-flower {font-size:clamp(15px,7cqw,35px)}
+.gate-ornament {font-size:clamp(16px,7cqw,35px);margin:clamp(3px,2cqw,10px) 0}
+.gate-invitation-message {font-size:clamp(10px,5cqw,22px);margin-bottom:clamp(4px,2cqw,12px)}
+.gate-sentiment {font-size:clamp(5px,1.8cqw,9px)}
+.gatefold-inner-content {padding:clamp(6px,6cqw,24px)}
+
+/* Subtle flower motion behind the card, with actual SVG blossoms and leaves. */
+.intro-botanical {position:absolute;width:clamp(115px,20dvw,310px);height:min(55dvh,530px);top:50%;opacity:.13;z-index:-1;pointer-events:none;filter:sepia(.13)}
+.intro-botanical-left {left:max(-65px,-6dvw);translate:0 -50%;rotate:-14deg}
+.intro-botanical-right {right:max(-65px,-6dvw);translate:0 -50%;rotate:-14deg}
+.living-embroidery {position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:1}
+.embroidered-flower {position:absolute;width:16%;height:auto;filter:drop-shadow(0 1px 1px #99836d6a);opacity:.7;transform-origin:center center}
+.embroidered-flower-top {top:20%;left:12%;animation:livingBloom 8.8s ease-in-out infinite}
+.embroidered-flower-middle {top:37%;left:49%;width:13%;animation:livingBloom 7.5s ease-in-out -1.7s infinite reverse}
+.embroidered-flower-bottom {bottom:16%;left:14%;width:13%;animation:livingBloom 9.8s ease-in-out -3s infinite}
+.living-embroidery-right .embroidered-flower-top {left:auto;right:12%}
+.living-embroidery-right .embroidered-flower-middle {left:auto;right:49%}
+.living-embroidery-right .embroidered-flower-bottom {left:auto;right:14%}
+.blossom-petals {transform-origin:32px 32px;animation:petalBreathe 7s ease-in-out infinite}
+.embroidered-leaf {position:absolute;width:7%;height:4%;border-radius:0 80% 0 80%;background:#8b9b77a8;border:1px solid #81927780;transform-origin:0 100%;animation:leafFlutter 6.5s ease-in-out infinite}
+.leaf-one {top:16%;left:34%;rotate:30deg}
+.leaf-two {bottom:22%;right:23%;rotate:70deg;animation-delay:-3s}
+.floating-petals {position:absolute;inset:-15px;pointer-events:none;z-index:7;overflow:visible}
+.floating-petal {position:absolute;display:block;width:8px;height:13px;background:radial-gradient(ellipse at 36% 34%,#fffcf3,#d6bea3 75%,#ad9580);border-radius:80% 0 80% 0;opacity:0;box-shadow:0 1px 2px #735e4930;transform:rotate(20deg);animation:petalFloat 11s ease-in-out infinite}
+.floating-petal-one {left:8%;top:24%;animation-delay:-2s}
+.floating-petal-two {left:67%;top:14%;animation-delay:-7s;animation-duration:13s}
+.floating-petal-three {left:87%;top:48%;animation-delay:-4s;animation-duration:10s}
+.floating-petal-four {left:15%;top:61%;animation-delay:-9s;animation-duration:14s}
+.floating-petal-five {left:43%;top:9%;animation-delay:-5s;animation-duration:12s}
+.floating-petal-six {left:72%;top:81%;animation-delay:-3s;animation-duration:15s}
+@keyframes livingBloom {0%,100%{transform:scale(.86) rotate(-6deg);opacity:.42}48%{transform:scale(1.12) rotate(5deg);opacity:.91}}
+@keyframes petalBreathe {0%,100%{transform:scale(.96) rotate(-4deg)}50%{transform:scale(1.06) rotate(4deg)}}
+@keyframes leafFlutter {0%,100%{transform:rotate(-5deg)}50%{transform:rotate(11deg)}}
+@keyframes petalFloat {0%,12%{opacity:0;transform:translate3d(-5px,12px,0) rotate(10deg)}26%{opacity:.75}66%{opacity:.58}88%,100%{opacity:0;transform:translate3d(18px,-44px,0) rotate(210deg)}}
+
+/* Existing hand-drawn SVG flowers also breathe, while the long stems sway like living plants. */
+.hero-botanical-left {animation:heroPlantLeft 10s ease-in-out infinite alternate;transform-origin:50% 100%}
+.hero-botanical-right {animation:heroPlantRight 11.5s ease-in-out -3s infinite alternate;transform-origin:50% 100%}
+.hero-botanical g,.rsvp-plant g,.intro-botanical g {transform-box:fill-box;transform-origin:center;animation:petalBreathe 7s ease-in-out -1s infinite}
+.hero-botanical g:nth-of-type(2),.intro-botanical g:nth-of-type(2){animation-delay:-3.5s;animation-duration:9s}
+.rsvp-plant.left{animation:rsvpPlantSway 12s ease-in-out infinite alternate;transform-origin:50% 100%}
+@keyframes heroPlantLeft {from{transform:rotate(-14deg)}to{transform:rotate(-9deg)}}
+@keyframes heroPlantRight {from{transform:scaleX(-1) rotate(-14deg)}to{transform:scaleX(-1) rotate(-8deg)}}
+@keyframes rsvpPlantSway {from{transform:rotate(-13deg)}to{transform:rotate(-6deg)}}
+.scroll-cue i {animation:scrollNudge 2.5s ease-in-out infinite}
+@keyframes scrollNudge {0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+
+/* Reveal transitions do not hide anything until the client observer successfully starts. */
+@media (prefers-reduced-motion:no-preference) {
+  .motion-ready [data-reveal] {opacity:0;filter:blur(3px);transform:translate3d(0,34px,0);transition:opacity 850ms ease,transform 950ms cubic-bezier(.2,.65,.2,1),filter 850ms ease}
+  .motion-ready [data-reveal="left"]{transform:translate3d(-32px,12px,0)}
+  .motion-ready [data-reveal="right"]{transform:translate3d(32px,12px,0)}
+  .motion-ready [data-reveal].is-visible{opacity:1;filter:blur(0);transform:translate3d(0,0,0)}
+  .motion-ready [data-reveal-delay="1"]{transition-delay:110ms}
+  .motion-ready [data-reveal-delay="2"]{transition-delay:210ms}
+}
+
+.hero {min-height:100vh;min-height:100dvh}
+.hero-center {padding-top:clamp(76px,12dvh,120px)}
+@media (max-width:680px) {
+  .hero {min-height:100dvh}
+  .hero-center {padding-inline:clamp(16px,4dvw,28px);padding-top:clamp(65px,11dvh,105px)}
+  .hero h1 {font-size:clamp(50px,15dvw,106px);letter-spacing:-.055em}
+  .hero-intro {font-size:clamp(20px,5dvw,28px)}
+  .hero-date span {font-size:clamp(16px,4.6dvw,24px)}
+  .hero-date strong {font-size:clamp(37px,10dvw,58px);padding-inline:14px}
+  .section-container {padding-left:clamp(16px,5dvw,28px);padding-right:clamp(16px,5dvw,28px)}
+  .intro-botanical {opacity:.09;width:35dvw}
+}
+@media (max-width:350px) {
+  .gatefold-scene {padding-inline:10px}
+  .gatefold-stage {width:min(calc(100dvw - 26px),max(140px,calc((100dvh - 200px)*.71)))}
+  .gatefold-open-btn{width:calc(100dvw - 26px)}
+  .gatefold-caption {font-size:clamp(13px,4.4dvw,18px)}
+  .gatefold-divider span {width:24px}
+  .hero h1 {font-size:clamp(45px,14.3dvw,62px)}
+}
+@media (max-height:550px) {
+  .gatefold-scene {justify-content:flex-start;min-height:100dvh;padding-block:12px}
+  .gatefold-stage {width:min(calc(100dvw - 36px),max(160px,calc((100dvh - 175px)*.71)))}
+  .gatefold-eyebrow {margin-bottom:4px}
+  .gatefold-divider {margin-bottom:6px}
+  .gatefold-open-btn {margin-top:10px}
+  .gatefold-caption {margin-top:10px}
+}
+@media (prefers-reduced-motion:reduce) {
+  .embroidered-flower,.blossom-petals,.embroidered-leaf,.floating-petal,
+  .hero-botanical-left,.hero-botanical-right,.hero-botanical g,.rsvp-plant,
+  .intro-botanical g,.scroll-cue i {animation:none!important}
+  .motion-ready [data-reveal] {opacity:1!important;filter:none!important;transform:none!important}
+}
