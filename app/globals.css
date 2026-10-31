@@ -1,3 +1,4 @@
+html,body{background:#f7f3e9}
 
 :root{--ivory:#fbf8f0;--paper:#f6f0e5;--sage:#526c58;--sage-dark:#324c3c;--ink:#303b30;--muted:#7d8175;--rose:#c99d9d;--line:rgba(75,93,71,.2);--serif:var(--font-wedding-serif),Georgia,'Times New Roman',serif;--sans:var(--font-wedding-sans),Arial,sans-serif}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ivory);color:var(--ink);font-family:var(--sans);font-size:14px;-webkit-font-smoothing:antialiased}button,input,textarea,select{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}img{max-width:100%}::selection{background:#d7dfd1;color:#304b38}section[id]{scroll-margin-top:75px}
@@ -244,4 +245,116 @@ main {min-width:0}
   .hero-botanical-left,.hero-botanical-right,.hero-botanical g,.rsvp-plant,
   .intro-botanical g,.scroll-cue i {animation:none!important}
   .motion-ready [data-reveal] {opacity:1!important;filter:none!important;transform:none!important}
+}
+
+/* MOTION EDITION — cinematic, intimate, botanical. Signature: tactile two-door gatefold.
+   One hero gesture, otherwise quiet progressive motion. Compositor-only animation. */
+html, body { background:#f7f3e9; }
+:root { --motion-ease: cubic-bezier(.2,.7,.16,1); --motion-gold:#baa076; }
+:focus-visible {outline: 2px solid #936d34;outline-offset:4px}
+
+/* The original card remains the centerpiece. Foil accents are subtle, not a new layout. */
+.gatefold-chapter {
+  display:block;color:#a18d6c;letter-spacing:.27em;font:600 clamp(7px,1.45dvw,9px)/1.4 var(--sans);
+  text-transform:uppercase;margin-top:-7px;margin-bottom:8px;opacity:.9;
+}
+.gatefold-chapter i {font:italic 1.45em var(--serif);letter-spacing:0}
+.gatefold-card::after {
+  content:"";position:absolute;inset:0;z-index:8;pointer-events:none;
+  background:linear-gradient(105deg,transparent 32%,rgba(255,254,233,.36) 49%,transparent 62%);
+  opacity:0;transform:translateX(-70%);
+}
+.gatefold-closed .gatefold-card::after {animation:gatefoldFoilGleam 5.8s ease-in-out 1.6s infinite}
+@keyframes gatefoldFoilGleam {0%,56%,100%{transform:translateX(-90%);opacity:0}65%{opacity:.23}83%{transform:translateX(95%);opacity:0}}
+.gatefold-closed .gatefold-seal {animation:sealBreathe 4.8s ease-in-out infinite}
+@keyframes sealBreathe {0%,100%{box-shadow:0 4px 11px rgba(85,64,40,.19)}50%{box-shadow:0 5px 20px rgba(166,129,73,.3)}}
+.gatefold-closed .gatefold-open-btn {position:relative;overflow:hidden}
+.gatefold-closed .gatefold-open-btn::before {content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent,rgba(255,255,255,.13),transparent);transform:translateX(-110%);transition:transform .65s var(--motion-ease)}
+.gatefold-closed .gatefold-open-btn:hover::before {transform:translateX(110%)}
+.gatefold-opening .gatefold-door-right{transition-delay:110ms}
+.gatefold-opening .gatefold-door-left{transition-delay:30ms}
+.gatefold-opening .gatefold-card::after{animation:none}
+.gatefold-opening .gatefold-seal{animation:none;transform:translate(-50%,-57%) scale(.58) rotate(-9deg)}
+.gatefold-opening .gatefold-scene {animation:sceneRelease 2.5s ease forwards}
+@keyframes sceneRelease {0%,68%{opacity:1;filter:blur(0)}100%{opacity:0;filter:blur(4px)}}
+
+/* The story appears after the card opens: brief staged rise, not continuous distraction. */
+.hero-side-note {position:absolute;right:clamp(35px,5dvw,110px);top:clamp(37px,6dvh,68px);z-index:2;font-size:9px;font-weight:600;letter-spacing:.24em;color:#869078;writing-mode:vertical-rl;text-transform:uppercase}
+.hero-side-note span {color:#a78c69;margin:11px 0}
+.hero h1 {text-wrap:balance}
+.hero-center {isolation:isolate}
+.invitation-revealed .hero-center > .eyebrow,.invitation-revealed .hero-center > .ornament,
+.invitation-revealed .hero-center > .hero-intro,.invitation-revealed .hero-center > h1,
+.invitation-revealed .hero-center > .hero-subtitle,.invitation-revealed .hero-center > .hero-date,
+.invitation-revealed .hero-center > .date-coming-soon,.invitation-revealed .hero-center > .hero-city,
+.invitation-revealed .hero-center > .hero-cta {
+  animation:letterUnfold 940ms var(--motion-ease) both;
+}
+.invitation-revealed .hero-center > .ornament {animation-delay:75ms}
+.invitation-revealed .hero-center > .hero-intro {animation-delay:140ms}
+.invitation-revealed .hero-center > h1 {animation-delay:240ms}
+.invitation-revealed .hero-center > .hero-subtitle {animation-delay:340ms}
+.invitation-revealed .hero-center > .hero-date,.invitation-revealed .hero-center > .date-coming-soon {animation-delay:410ms}
+.invitation-revealed .hero-center > .hero-city {animation-delay:475ms}
+.invitation-revealed .hero-center > .hero-cta {animation-delay:540ms}
+@keyframes letterUnfold {from{opacity:0;filter:blur(4px);transform:translate3d(0,18px,0)}to{opacity:1;filter:blur(0);transform:translate3d(0,0,0)}}
+
+/* A considered gallery state before official photographs arrive. No missing-image requests. */
+.gallery-interlude {
+  position:relative;min-height:clamp(380px,42dvw,560px);padding:clamp(24px,4dvw,52px);
+  display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:clamp(18px,5dvw,95px);
+  border-top:1px solid #bec7b3;border-bottom:1px solid #bec7b3;
+}
+.gallery-interlude::before{content:"";position:absolute;inset:12px;border:1px solid rgba(114,131,102,.17);pointer-events:none}
+.gallery-garden {position:relative;min-height:390px;display:flex;align-items:center;justify-content:center;isolation:isolate}
+.gallery-garden::before{content:"";position:absolute;width:min(350px,95%);aspect-ratio:1;border-radius:50%;background:radial-gradient(ellipse at 40% 44%,#fefcf2 10%,#e1e4d6 80%);box-shadow:0 0 80px #eaede3;z-index:-1}
+.gallery-garden-ring{width:clamp(170px,20dvw,260px);aspect-ratio:1;border:1px solid #c8b797;border-radius:50%;background:#f7f5ecb5;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;box-shadow:0 0 0 10px #f6f3e882,0 0 0 11px #beae8f66}
+.gallery-garden-ring svg{width:26px;height:26px;opacity:.7;margin-bottom:12px}
+.gallery-garden-ring span{font:italic clamp(44px,5dvw,69px)/1 var(--serif);color:#786b50;white-space:nowrap}
+.gallery-garden-ring i{font-size:.65em;color:#bd9f80}
+.gallery-garden-ring small{font:600 8px var(--sans);letter-spacing:.25em;color:#8d926f;margin-top:14px}
+.gallery-garden > svg{height:350px;width:160px;position:absolute;opacity:.86;filter:drop-shadow(0 8px 9px #77806916);transform-origin:50% 90%}
+.gallery-garden-left{left:-17px;bottom:0;transform:rotate(-24deg);animation:gallerySway 10s ease-in-out infinite alternate}
+.gallery-garden-right{right:-17px;top:0;transform:scaleX(-1) rotate(-24deg);animation:gallerySwayOther 12s ease-in-out -3s infinite alternate}
+@keyframes gallerySway{from{transform:rotate(-22deg)}to{transform:rotate(-16deg)}}
+@keyframes gallerySwayOther{from{transform:scaleX(-1) rotate(-24deg)}to{transform:scaleX(-1) rotate(-17deg)}}
+.gallery-interlude-copy {padding-block:20px;position:relative;z-index:2}
+.gallery-interlude-copy h3{font:400 clamp(43px,5.3dvw,76px)/.99 var(--serif);letter-spacing:-.043em;color:#465d48;margin:15px 0 25px}
+.gallery-interlude-copy h3 em{color:#a47e76}
+.gallery-interlude-copy >p:last-child{font:19px/1.5 var(--serif);color:#6e7b6e;max-width:360px}
+.gallery-item{margin:0}.gallery-item figcaption{font:italic 20px var(--serif);color:#6d7d68;margin:13px 0 12px;text-align:center}
+
+/* Use quiet motion for below-the-fold sections, with zero blank state without JS. */
+@media (prefers-reduced-motion:no-preference){
+  .motion-ready [data-reveal] {transition-duration:920ms,1000ms,920ms;transition-timing-function:var(--motion-ease)}
+  .gallery-interlude .gallery-garden-ring {animation:ringBreathe 7s ease-in-out infinite}
+}
+@keyframes ringBreathe {0%,100%{box-shadow:0 0 0 10px #f6f3e882,0 0 0 11px #beae8f66}50%{box-shadow:0 0 0 15px #f6f3e855,0 0 0 16px #beae8f44}}
+
+@media(max-width:760px){
+  .hero-side-note{display:none}
+  .gallery-interlude{grid-template-columns:1fr;text-align:center;gap:0;padding:30px 16px 42px}
+  .gallery-garden{min-height:300px}
+  .gallery-garden > svg{height:260px;width:118px}
+  .gallery-garden-left{left:clamp(0px,8dvw,50px)}
+  .gallery-garden-right{right:clamp(0px,8dvw,50px)}
+  .gallery-interlude-copy{padding:0 6px 14px}
+  .gallery-interlude-copy h3{font-size:clamp(39px,11dvw,59px);margin:10px 0 18px}
+  .gallery-interlude-copy >p:last-child{margin-inline:auto}
+  .gallery-garden-ring{width:190px}
+}
+@media(max-width:375px){
+  .gatefold-chapter{font-size:6px;margin-top:-6px;margin-bottom:5px}
+  .gatefold-stage{width:min(calc(100dvw - 32px),max(140px,calc((100dvh - 225px)*.71)))}
+  .gallery-garden-ring{width:160px}
+  .gallery-garden{min-height:250px}
+  .gallery-garden > svg{height:230px;width:112px}
+}
+@media(max-height:590px){
+  .gatefold-chapter{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .gatefold-closed .gatefold-card::after,.gatefold-closed .gatefold-seal,
+  .gatefold-opening .gatefold-scene,.invitation-revealed .hero-center > *,
+  .gallery-garden-left,.gallery-garden-right,.gallery-garden-ring {animation:none!important}
 }

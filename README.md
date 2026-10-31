@@ -23,7 +23,7 @@ Windows PowerShell: replace the `cp` line with `Copy-Item .env.example .env.loca
 
 **Important build note:** The generation environment could not reach npm's package registry, so this ZIP does **not** contain a fabricated `pnpm-lock.yaml` or an unverified `node_modules` folder. The first `corepack pnpm install` generates the real lockfile. **Commit that lockfile to Git**, then use `corepack pnpm install --frozen-lockfile` in CI and production.
 
-## Responsive layout and botanical motion (v2.1)
+## Responsive layout and botanical motion (v3.0)
 
 The side-opening card now responds to **both dynamic viewport dimensions**, using CSS `100dvh`, `100dvw`, `min()` and `clamp()` rather than a fixed-width envelope. The full card and action button remain inside the horizontal viewport on very narrow browser panes; compact-height screens can scroll the overlay vertically rather than cropping the action button. The main hero also uses a dynamic-height viewport.
 
@@ -34,11 +34,22 @@ The side-opening card now responds to **both dynamic viewport dimensions**, usin
 
 **Visual QA:** the standalone invitation was checked in Chromium with simulated viewports **207×500**, **320×568**, **375×667**, **390×844**, **430×932**, **768×1024**, **1440×900** and **980×480**. The closed card and action button fitted within every checked viewport; the 980×480 viewport scrolls vertically for the small amount of overflow. The opening state and story scroll reveal were also exercised at 390×844. These are checks of the self-contained design preview, **not a completed Next.js production build**.
 
+## Motion edition — design review and enhancements
+
+- The two front doors open in a staggered sequence, followed by a short dissolve into the hero. The name and invitation elements then enter with a restrained blur-rise choreography.
+- Gentle gold foil and wax-seal effects supplement the existing embroidered artwork. They do not loop aggressively, and all optional animation respects `prefers-reduced-motion`.
+- On phones and short viewports the gatefold is bounded using `dvw`, `dvh`, and `clamp()` with vertical scrolling as a fallback; decorative content never creates intentional horizontal page scroll.
+- The empty photo gallery is now a designed botanical album interlude. Actual photographs automatically appear when their entries are added to `config/wedding.ts`.
+- The opening dialog now focuses the invitation card and traps keyboard Tab focus until the invitation opens.
+- `DESIGN_SPEC.md` records palette, typography, easing, breakpoints, and the MotionSites references studied.
+
+**Verification performed in this iteration:** static preview structure and JavaScript syntax checks; TypeScript/TSX syntax checks for 19 source files; CSS brace balance; and 6 RSVP/security validation tests passed. This environment's browser enforces a policy that prevented loading or rendering a new local preview, so updated screenshots and the full Next.js build are **not claimed as tested**. The screenshots from the prior responsive edition are available for comparison, but do not validate this new motion edition. Run `corepack pnpm install && corepack pnpm build` and visually test at 320px, 390px, 768px and desktop widths before publication.
+
 ## Customize the wedding
 
 Edit `config/wedding.ts` for names, welcome message, story, venue, program, city, dress code and questions. Names are already **Melanie and Marvin**. The date, venue, RSVP deadline and photographs are deliberately **not invented**.
 
-Set `dateTime` to a confirmed ISO date **including timezone offset** (e.g. `2027-06-19T15:00:00+03:00` for Kampala). The countdown, displayed date and downloadable calendar event then become active. Add pictures to `public/photos/` named `photo-1.jpg` to `photo-4.jpg` or adjust paths in the config. Existing pictures are elegant placeholders until real photos are added.
+Set `dateTime` to a confirmed ISO date **including timezone offset** (e.g. `2027-06-19T15:00:00+03:00` for Kampala). The countdown, displayed date and downloadable calendar event then become active. Add pictures to `public/photos/` named `photo-1.jpg` to `photo-4.jpg` or adjust paths in the config. Until real photographs are added, the gallery displays an original botanical editorial interlude without broken image requests or fake photo boxes.
 
 ## Protect and enable real RSVPs
 

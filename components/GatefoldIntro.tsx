@@ -34,6 +34,16 @@ export function GatefoldIntro() {
   }, []);
 
   useEffect(() => {
+    if (!ready) return;
+    document.documentElement.classList.toggle("invitation-revealed", stage === "revealed");
+    return () => { document.documentElement.classList.remove("invitation-revealed"); };
+  }, [ready, stage]);
+
+  useEffect(() => {
+    if (stage === "closed" && ready) resetFocus.current?.focus({ preventScroll: true });
+  }, [ready, stage]);
+
+  useEffect(() => {
     if (stage === "revealed" || !ready) return;
     const original = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -48,14 +58,25 @@ export function GatefoldIntro() {
     timer.current = setTimeout(() => setStage("revealed"), reducedMotion ? 200 : 2450);
   }
 
+  function trapFocus(event: React.KeyboardEvent<HTMLDivElement>) {
+    if (event.key !== "Tab") return;
+    const nodes = event.currentTarget.querySelectorAll<HTMLButtonElement>('button:not([disabled])');
+    if (!nodes.length) return;
+    const first = nodes[0];
+    const last = nodes[nodes.length - 1];
+    if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+    else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+  }
+
   if (!ready) return <div className="gatefold-loading" aria-hidden="true" />;
   if (stage === "revealed") return null;
 
-  return <div className={`gatefold-overlay gatefold-${stage}`} role="dialog" aria-modal="true" aria-label="Melanie and Marvin's wedding invitation">
+  return <div className={`gatefold-overlay gatefold-${stage}`} role="dialog" aria-modal="true" aria-label="Melanie and Marvin's wedding invitation" onKeyDown={trapFocus}>
     <div className="gatefold-scene">
       <BotanicalSprig className="intro-botanical intro-botanical-left" />
       <BotanicalSprig className="intro-botanical intro-botanical-right" mirrored/>
       <p className="gatefold-eyebrow">A SPECIAL INVITATION FOR YOU</p>
+      <span className="gatefold-chapter" aria-hidden="true">MELANIE <i>&</i> MARVIN · A LOVE IN BLOOM</span>
       <div className="gatefold-divider" aria-hidden="true"><span/><TinyFlower/><span/></div>
       <button
         className="gatefold-stage"

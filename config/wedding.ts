@@ -31,12 +31,14 @@ export const wedding = {
   // Example: "2027-05-30"; hide RSVP deadline when not yet set.
   rsvpDeadline: null as string | null,
   contact: "",
-  gallery: [
-    { src: "/photos/photo-1.jpg", alt: "Melanie and Marvin together", caption: "The beginning of always", shape: "large" },
-    { src: "/photos/photo-2.jpg", alt: "Melanie and Marvin sharing a moment", caption: "Little moments, big love", shape: "small" },
-    { src: "/photos/photo-3.jpg", alt: "Melanie and Marvin on an adventure", caption: "Our favorite adventures", shape: "small" },
-    { src: "/photos/photo-4.jpg", alt: "A favorite photo of Melanie and Marvin", caption: "And everything in between", shape: "wide" },
-  ],
+  // Add actual photographs when they are supplied. An empty gallery has an intentional
+  // botanical editorial state instead of broken requests or fake-photo placeholders.
+  gallery: [] as Array<{
+    src: string;
+    alt: string;
+    caption: string;
+    shape: "large" | "small" | "wide";
+  }>,
   faq: [
     { q: "When should I arrive?", a: "Arrival instructions and ceremony time will be shared once the details are confirmed." },
     { q: "Can I bring a plus-one?", a: "Please include only guests covered by your invitation when submitting your RSVP." },
