@@ -1,5 +1,7 @@
 "use client";
 
+import { Icon } from "./Icons";
+
 import { type FormEvent, useState } from "react";
 import Script from "next/script";
 
@@ -76,7 +78,7 @@ export function RSVPForm({ siteKey }: { siteKey: string }) {
     <p className="rsvp-privacy-note">Your reply is shared only with the couple and their wedding organizers. Please share dietary details only if needed.</p>
     <button className="primary-button rsvp-submit" disabled={status === "sending" || status === "success"} type="submit">
       {status === "sending" ? "Sending your reply…" : status === "success" ? "RSVP received ✓" : "Send your RSVP"}
-      {status !== "success" && <span aria-hidden="true">↗</span>}
+      {status !== "success" && <Icon name="arrow-up-right" size={17}/>}
     </button>
     {message && <p className={`form-feedback ${status}`} role="status" aria-live="polite">{message}</p>}
   </form>;

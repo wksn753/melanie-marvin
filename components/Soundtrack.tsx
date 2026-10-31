@@ -1,5 +1,6 @@
 "use client";
 
+import { Icon } from "./Icons";
 import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from "react";
 
 /** This track was composed for this demo, not copied from a commercial song.
@@ -60,20 +61,20 @@ export function MusicPicker({ variant = "feature" }: { variant?: "intro" | "feat
   const current = soundtrackOptions.find(item => item.id === selected)!;
   return <div className={`music-control music-control-${variant}`} onKeyDown={e => { if (e.key === "Escape") setOpen(false); }}>
     <button type="button" className="music-trigger" aria-expanded={open} aria-label={variant === "dock" ? "Opening song settings" : undefined} onClick={() => setOpen(o => !o)}>
-      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true"><path d="M9 18V5l11-2v13"/><ellipse cx="6" cy="18" rx="3" ry="2"/><ellipse cx="17" cy="16" rx="3" ry="2"/></svg>
+      <Icon name="music" size={17}/>
       <span>{variant === "intro" ? "Choose an opening song" : variant === "dock" ? (playing ? "Music on" : "Music") : current.title === "No music" ? "Choose our opening song" : current.title}</span>
-      <span className="music-chevron" aria-hidden="true">⌄</span>
+      <span className="music-chevron" aria-hidden="true"><Icon name="chevron-down" size={17}/></span>
     </button>
     {open && <div className="music-choices" role="group" aria-label="Opening song options">
       <p className="music-picker-label">YOUR INVITATION SOUNDTRACK</p>
       {soundtrackOptions.map(track => <button type="button" className={`music-choice ${selected === track.id ? "is-active" : ""}`} key={track.id} aria-pressed={selected === track.id} onClick={() => { select(track.id, variant !== "intro"); setOpen(false); }}>
-        <span className="music-choice-mark" aria-hidden="true">{selected === track.id ? "◉" : "○"}</span>
+        <span className="music-choice-mark" aria-hidden="true">{selected === track.id ? <Icon name="check" size={14}/> : null}</span>
         <span className="music-choice-copy"><strong>{track.title}</strong><small>{track.subtitle}</small></span>
         <small className="music-length">{track.length}</small>
       </button>)}
       <p className="music-picker-note">Music starts only when you choose it. You can switch it off any time.</p>
     </div>}
-    {selected !== "none" && variant !== "intro" && <button className="music-play-toggle" type="button" onClick={toggle} aria-label={playing ? "Pause wedding music" : "Play wedding music"}>{playing ? "Pause" : "Play"}<span aria-hidden="true">{playing ? "Ⅱ" : "▷"}</span></button>}
+    {selected !== "none" && variant !== "intro" && <button className="music-play-toggle" type="button" onClick={toggle} aria-label={playing ? "Pause wedding music" : "Play wedding music"}>{playing ? "Pause" : "Play"}<span aria-hidden="true"><Icon name={playing ? "pause" : "play"} size={15}/></span></button>}
   </div>;
 }
 

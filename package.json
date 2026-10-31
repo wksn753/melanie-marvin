@@ -1,6 +1,6 @@
 {
-  "name": "melanie-marvin-wedding",
-  "version": "3.1.0",
+  "name": "marvin-melanie-wedding",
+  "version": "4.0.0",
   "private": true,
   "packageManager": "pnpm@12.16.0",
   "engines": {

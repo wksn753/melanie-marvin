@@ -16,7 +16,7 @@ html,body{background:#f7f3e9}
 @media(max-width:680px){.header{height:69px;padding:0 18px}.header nav{gap:15px}.header nav>a:not(.nav-rsvp){display:none}.header nav .nav-rsvp{padding:12px 18px}.hero{min-height:660px}.hero:before{inset:13px}.hero:after{inset:21px}.hero-center{padding-top:84px}.hero-botanical{width:190px;height:520px;bottom:12px;opacity:.37}.hero-botanical-left{left:-98px}.hero-botanical-right{right:-98px}.hero h1{font-size:clamp(94px,18vw,130px);margin:26px 0 26px}.hero-intro{font-size:23px}.hero-center .eyebrow{font-size:8px}.hero-subtitle{font-size:9px;margin-bottom:26px}.hero-date strong{font-size:47px;padding:0 16px}.hero-date span{font-size:19px}.hero-city{font-size:10px}.hero-cta{padding:16px 26px}.scroll-cue{margin-top:43px}.countdown-section{padding:67px 15px 59px}.countdown{margin-top:35px}.countdown strong{font-size:49px}.countdown span{font-size:8px;letter-spacing:.15em}.section-container{padding:0 25px}.story{padding-top:80px;padding-bottom:83px}.section-flourish{margin-bottom:40px}.story-layout{grid-template-columns:1fr;gap:23px}.story-title h2,h2{font-size:clamp(50px,10vw,65px)}.story-drawn-flower{display:none}.story-copy{margin:0}.story-copy p:not(.signature){font-size:19px}.gallery-section{padding:82px 0}.section-header{display:block;margin-bottom:32px}.section-header>p{margin-top:20px}.gallery-grid{grid-template-columns:1fr 1fr;gap:12px}.gallery-large{grid-row:span 2}.gallery-wide{grid-column:span 2}.gallery-image{border-width:5px;height:175px}.gallery-large .gallery-image{height:388px}.gallery-wide .gallery-image{height:220px}.photo-placeholder span{font-size:23px}.gallery-item>p{font-size:15px}.day-section{padding:83px 0 84px}.day-intro{margin-bottom:36px}.day-intro>p:last-child{font-size:20px}.day-details{grid-template-columns:1fr}.date-card,.day-venue{padding:36px 15px}.date-card{border-right:0;border-bottom:1px solid var(--line)}.date-card>strong{font-size:105px}.schedule{margin-top:65px;grid-template-columns:1fr;gap:24px}.schedule h3{font-size:46px}.timeline-item{grid-template-columns:88px 18px 1fr;gap:15px}.timeline-item:not(:last-child):after{left:112px}.timeline h4{font-size:24px}.timeline p{font-size:16px}.rsvp-section{padding:83px 19px 90px}.rsvp-plant{opacity:.15}.rsvp-choices button{font-size:18px;padding:13px 5px}.form-row{grid-template-columns:1fr;gap:0}.rsvp-copy{font-size:20px}.faq{padding-top:80px;padding-bottom:90px}.faq-list summary{font-size:25px}.closing{padding:80px 20px}footer{flex-wrap:wrap;padding:23px 20px;justify-content:center;text-align:center}footer span:nth-child(2){display:none}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
 
-/* MELANIE & MARVIN — BOTANICAL GATEFOLD INVITATION */
+/* MARVIN & MELANIE — BOTANICAL GATEFOLD INVITATION */
 .gatefold-loading {position:fixed;inset:0;z-index:200;background:#f4f0e6}
 .gatefold-overlay {position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;overflow-y:auto;overscroll-behavior:contain;background:radial-gradient(ellipse at 50% 45%,#fffefa 0%,#f8f5ed 52%,#ece8de 100%);isolation:isolate}
 .gatefold-overlay:before {content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.2;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.66' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='.23'/%3E%3C/svg%3E")}
@@ -359,7 +359,7 @@ html, body { background:#f7f3e9; }
   .gallery-garden-left,.gallery-garden-right,.gallery-garden-ring {animation:none!important}
 }
 
-/* MELANIE & MARVIN — FULL-BLEED LIVING GARDEN EDITION
+/* MARVIN & MELANIE — FULL-BLEED LIVING GARDEN EDITION
    Hero: edge-to-edge animated botanical frame, never a phone mockup.
    Scripture: Great Vibes calligraphy; captions retain high-contrast DM Sans.
    All movement is transform/opacity only and disabled with reduced motion. */
@@ -518,3 +518,75 @@ html,body{width:100%;max-width:100%;overflow-x:clip;background:#f8f4e9}
 @media(prefers-reduced-motion:reduce){
   .garden-corner,.garden-cluster-core,.garden-bloom,.garden-leaf,.garden-pollen{animation:none!important;transition:none!important}
 }
+
+/* V4 — OurYesDay-inspired editorial invitation with real botanical illustrations. */
+:root { --font-wedding-paper:#fbf8f0 }
+.header { background:rgba(251,248,240,.96); }
+.header .brand-flower svg { display:inline-block;vertical-align:middle; }
+.header nav a, .nav-rsvp, .hero-cta { display:inline-flex;align-items:center;justify-content:center; }
+.header nav .nav-rsvp{gap:10px}
+.hero { min-height:max(680px,100dvh); background:radial-gradient(ellipse at center 35%,#fffdfa 0%,#faf7f0 65%,#f2eadc 100%); }
+.hero-center {max-width:min(700px,72dvw);padding-block:clamp(75px,11dvh,145px) 70px;}
+.hero .hero-side-note {display:none}
+.hero .hero-center h1 {font-family:var(--font-wedding-script),"Brush Script MT",var(--serif);font-weight:400;line-height:.98;letter-spacing:0;font-size:clamp(75px,10vw,146px);margin:22px 0 25px;color:#293e31;}
+.hero .hero-center h1 span{display:block;white-space:nowrap;font-weight:400;text-transform:none;}
+.hero .hero-center h1 em{font-family:var(--serif);font-size:.43em;line-height:.57;color:#ae875e;font-weight:300;margin-block:8px;}
+.hero .hero-intro {font-size:clamp(20px,2.1vw,29px)}
+.hero .scroll-cue svg{margin-top:12px;animation:scrollNudge 2.5s ease-in-out infinite;color:#a48e64}
+.hero .hero-cta svg {flex:none}
+.floral-frame-painted {position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.floral-corner {position:absolute;z-index:1;width:clamp(142px,23vw,340px);height:clamp(195px,40vh,520px);opacity:.96;will-change:transform}
+.floral-corner img {object-fit:fill;filter:saturate(.91)}
+.floral-top-left {top:-10px;left:-8px;transform-origin:0 0;animation:livingBotanicals 11s ease-in-out infinite alternate}
+.floral-top-right {top:-10px;right:-8px;transform-origin:100% 0;animation:livingBotanicals 10s ease-in-out -2s infinite alternate-reverse}
+.floral-bottom-left {bottom:-6px;left:-10px;transform-origin:0 100%;animation:livingBotanicals 13s ease-in-out -5s infinite alternate}
+.floral-bottom-right {bottom:-6px;right:-10px;transform-origin:100% 100%;animation:livingBotanicals 12s ease-in-out -3s infinite alternate-reverse}
+@keyframes livingBotanicals {from{transform:rotate(-1.5deg) scale(.988)}to{transform:rotate(1.5deg) scale(1.014)}}
+.photo-intro {display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);min-height:clamp(380px,54vw,710px);background:#ebe8dd;overflow:hidden;}
+.photo-intro-image {position:relative;min-height:460px;overflow:hidden}
+.photo-intro-image img{object-fit:cover;object-position:45% 43%;transition:transform 1.3s ease}
+.photo-intro-image:hover img{transform:scale(1.035)}
+.photo-intro-copy {padding:clamp(36px,6vw,116px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;background:radial-gradient(ellipse at 75% 16%,#fbf9ef,#eae8dc);}
+.photo-intro-copy h2 {font-size:clamp(48px,5vw,85px);margin:14px 0 24px;line-height:1.04}
+.photo-intro-copy p:not(.eyebrow) {font-family:var(--serif);font-size:clamp(20px,2vw,28px);line-height:1.5;color:#626d5c;max-width:380px}
+.photo-intro-detail {color:#b29472;margin-top:24px}
+.photo-intro-names {font-family:var(--font-wedding-script),var(--serif);font-size:clamp(28px,3vw,46px);color:#465b44;margin-top:18px}
+.photo-intro-names i{font-family:var(--serif);font-size:.7em;color:#b49468;margin:0 8px}
+.gallery-grid .gallery-item {min-width:0}
+.gallery-grid .gallery-image {overflow:hidden;background:#ede8db}
+.gallery-grid .gallery-image img {width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.1,1)}
+.gallery-grid .gallery-image:hover img {transform:scale(1.045)}
+.gallery-grid .gallery-image-2 img {object-position:50% 43%}
+.gallery-grid .gallery-image-4 img {object-position:50% 40%}
+.story-drawn-flower{color:#ba9c7b;opacity:.75}
+.gate-inner-flower, .gate-ornament, .gatefold-footer-ornament {display:flex;align-items:center;justify-content:center}
+.replay-invitation svg{margin-left:7px;vertical-align:middle}
+.gatefold-open-btn span {display:inline-flex;align-items:center}
+.music-chevron{display:inline-flex;align-items:center;justify-content:center}
+.music-choice-mark{display:inline-flex;align-items:center;justify-content:center}
+.text-link {display:inline-flex;align-items:center;gap:9px}
+.date-card>strong svg{width:56px;height:56px;color:#a88d65;margin:21px auto}
+footer a {display:inline-flex;align-items:center;gap:8px}
+@media(max-width:950px){.floral-corner{width:clamp(135px,27vw,260px);height:clamp(185px,32vw,360px)}.hero-center{max-width:72vw}}
+@media(max-width:680px){
+ .header {padding:0 20px}
+ .hero {min-height:100dvh;min-height:max(650px,100dvh)}
+ .hero-center {max-width:100%;width:100%;padding:clamp(105px,18dvh,150px) 30px 70px}
+ .hero .hero-center h1 {font-size:clamp(66px,16dvw,108px);line-height:.95;margin:18px 0 28px}
+ .hero .hero-intro {font-size:21px}
+ .floral-corner{width:clamp(130px,41dvw,220px);height:clamp(190px,38dvh,280px);opacity:.85}
+ .floral-top-left,.floral-top-right{top:-13px}
+ .floral-bottom-left,.floral-bottom-right{bottom:-9px}
+ .photo-intro {grid-template-columns:1fr}
+ .photo-intro-image {min-height:clamp(330px,84dvw,510px)}
+ .photo-intro-copy {padding:65px 26px 74px;align-items:center;text-align:center}
+ .photo-intro-detail{margin-top:6px}
+ .gallery-grid .gallery-image img{object-position:center}
+}
+@media(max-width:360px){.floral-corner{width:125px;height:205px}.hero-center{padding-inline:18px}.hero .hero-center h1{font-size:clamp(62px,15dvw,80px)}}
+@media(prefers-reduced-motion:reduce){.floral-corner{animation:none}.photo-intro-image img{transition:none}.gallery-grid .gallery-image img{transition:none}}
+/* Botanical art is naturally wider near the top and taller around the lower corners. */
+.floral-top-left,.floral-top-right{width:clamp(170px,24vw,320px);height:clamp(190px,29vw,350px)}
+.floral-bottom-left,.floral-bottom-right{width:clamp(156px,20vw,280px);height:clamp(235px,36vw,440px)}
+@media(max-width:680px){.floral-top-left,.floral-top-right{width:clamp(132px,39dvw,190px);height:clamp(140px,43dvw,210px)}.floral-bottom-left,.floral-bottom-right{width:clamp(122px,37dvw,190px);height:clamp(175px,54dvw,270px)}}
+@media(max-width:680px){.floral-top-left,.floral-top-right{width:clamp(110px,34dvw,155px);height:clamp(115px,37dvw,165px)}}

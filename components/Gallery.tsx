@@ -16,7 +16,7 @@ function BotanicalInterlude() {
     <div className="gallery-interlude-copy">
       <p className="eyebrow">MOMENTS MADE TO LAST</p>
       <h3>Some memories are<br/><em>still becoming.</em></h3>
-      <p>Photographs of Melanie and Marvin will find their home here soon.</p>
+      <p>Photographs of Marvin and Melanie will find their home here soon.</p>
     </div>
   </div>;
 }
@@ -26,7 +26,7 @@ function ImageSlot({src, alt, caption, shape, index}: {src: string; alt: string;
   if (broken) return null;
   return <figure className={`gallery-item gallery-${shape}`} data-reveal="up" data-reveal-delay={String(index % 3)}>
     <div className={`gallery-image gallery-image-${index}`}>
-      <Image src={src} alt={alt} width={900} height={1200} sizes="(max-width: 680px) 50vw, 33vw" onError={() => setBroken(true)} />
+      <Image src={src} alt={alt} width={1280} height={854} sizes="(max-width: 680px) 50vw, 33vw" onError={() => setBroken(true)} />
     </div>
     <figcaption>{caption}</figcaption>
   </figure>;

@@ -4,6 +4,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { Icon } from "./Icons";
 import { BotanicalSprig, TinyFlower } from "./Botanicals";
 import { FallingPetals, LivingEmbroidery } from "./LiveFlorals";
 import { wedding } from "@/config/wedding";
@@ -73,12 +74,12 @@ export function GatefoldIntro() {
   if (!ready) return <div className="gatefold-loading" aria-hidden="true" />;
   if (stage === "revealed") return null;
 
-  return <div className={`gatefold-overlay gatefold-${stage}`} role="dialog" aria-modal="true" aria-label="Melanie and Marvin's wedding invitation" onKeyDown={trapFocus}>
+  return <div className={`gatefold-overlay gatefold-${stage}`} role="dialog" aria-modal="true" aria-label="Marvin and Melanie's wedding invitation" onKeyDown={trapFocus}>
     <div className="gatefold-scene">
       <BotanicalSprig className="intro-botanical intro-botanical-left" />
       <BotanicalSprig className="intro-botanical intro-botanical-right" mirrored/>
       <p className="gatefold-eyebrow">A SPECIAL INVITATION FOR YOU</p>
-      <span className="gatefold-chapter" aria-hidden="true">MELANIE <i>&</i> MARVIN · A LOVE IN BLOOM</span>
+      <span className="gatefold-chapter" aria-hidden="true">MARVIN <i>&</i> MELANIE · A LOVE IN BLOOM</span>
       <div className="gatefold-divider" aria-hidden="true"><span/><TinyFlower/><span/></div>
       <button
         className="gatefold-stage"
@@ -86,7 +87,7 @@ export function GatefoldIntro() {
         ref={resetFocus}
         onClick={openCard}
         disabled={stage === "opening"}
-        aria-label="Open Melanie and Marvin's floral wedding card"
+        aria-label="Open Marvin and Melanie's floral wedding card"
       >
         <span className="gatefold-card">
           <span className="gatefold-inner">
@@ -94,9 +95,9 @@ export function GatefoldIntro() {
             <BotanicalSprig className="gate-inner-botanical right" mirrored/>
             <span className="gatefold-inner-content">
               <span className="gate-inside-eyebrow">TOGETHER WITH OUR FAMILIES</span>
-              <span className="gate-inner-flower" aria-hidden="true">✥</span>
+              <span className="gate-inner-flower" aria-hidden="true"><Icon name="flower" size={27}/></span>
               <span className="gate-names">{wedding.couple.first}<em>&</em>{wedding.couple.second}</span>
-              <span className="gate-ornament">❧</span>
+              <span className="gate-ornament"><Icon name="heart" size={25}/></span>
               <span className="gate-invitation-message">request the pleasure<br/>of your company</span>
               <span className="gate-sentiment">as we begin our forever</span>
             </span>
@@ -109,16 +110,16 @@ export function GatefoldIntro() {
       </button>
       <button type="button" className="gatefold-open-btn" onClick={openCard} disabled={stage === "opening"}>
         {stage === "opening" ? "OPENING WITH LOVE…" : "OPEN OUR INVITATION"}
-        <span aria-hidden="true">{stage === "opening" ? "♡" : "›"}</span>
+        <span aria-hidden="true"><Icon name={stage === "opening" ? "heart" : "arrow-right"} size={18}/></span>
       </button>
       <MusicPicker variant="intro"/>
       <p className="gatefold-caption">A little note, sent with all our love.</p>
-      <div className="gatefold-footer-ornament" aria-hidden="true">— ❧ —</div>
+      <div className="gatefold-footer-ornament" aria-hidden="true"><Icon name="flower" size={19}/></div>
     </div>
   </div>;
 }
 
 /** Can be shown in the header at any point to play the invitation opening again. */
 export function ReplayInvitationButton() {
-  return <button type="button" className="replay-invitation" onClick={() => window.dispatchEvent(new Event("wedding:replay-invitation"))}>View invitation <span aria-hidden="true">✧</span></button>;
+  return <button type="button" className="replay-invitation" onClick={() => window.dispatchEvent(new Event("wedding:replay-invitation"))}>View invitation <Icon name="flower" size={14}/></button>;
 }
