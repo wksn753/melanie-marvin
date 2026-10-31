@@ -6,6 +6,20 @@ A personalized invitation website with an original botanical gatefold card: two 
 
 The artwork belongs to this project; it is inspired by the *style* of the Herbarium invitation, not copied from another site's files.
 
+## New in v3.1 — living garden, calligraphy and optional music
+
+- **Full-viewport invitation:** the hero fills the available dynamic viewport (`dvh`/`dvw`), with four animated edge-to-edge botanical clusters rather than a phone-shaped mockup. Floral growth animates via CSS transforms and respects reduced-motion settings.
+- **Calligraphic names:** `Great_Vibes` via `next/font/google` is used for the names and selected elegant headings. Its stylesheet is compiled into locally hosted font resources by Next.js; `Cormorant_Garamond` and `DM_Sans` remain the supporting families.
+- **Illustrated details:** original watercolor-inspired gramophone, calendar and dress-code illustrations are stored under `public/illustrations/`, avoiding remote hotlinks.
+- **Guest music control:** select **No music** or **Garden Waltz** on the unopened card or in the site, with a visible pause/play control. Default is silence. Choosing a song on the introductory card does not begin playback until **Open our invitation** is clicked. Browser gesture requirements apply.
+- **Soundtrack licensing:** the bundled `public/audio/garden-waltz.ogg` is an original ~25-second instrumental demonstration composed for this project, not a commercially released wedding song. To replace it, use your own recording or a song you have permission to publish; update the track title, duration, and URL in `components/Soundtrack.tsx`. Do not add copyrighted recordings without authorization.
+
+### Verification and limitations for this version
+
+The updated **standalone HTML preview** was rendered in Chromium at 320×680, 390×844, 768×1024 and 1440×900. At all four checked widths the document had zero horizontal overflow; the opening card and content appeared without page errors. The bundled preview is visual-only for RSVPs; the database-backed Next.js application must be deployed and configured to record real responses.
+
+**A complete Next.js production build and fresh pnpm lockfile could not be verified in this environment** because the npm registry was unreachable. Run the project's `pnpm check` and `pnpm build` locally before deploying. Google Fonts also require internet access during the first Next.js build unless fonts are provided through an approved local build setup.
+
 ## Start locally
 
 Requirements: **Node.js 22.12 or newer**, and **pnpm 12.16.0** (via Corepack). In a terminal:
@@ -43,7 +57,7 @@ The side-opening card now responds to **both dynamic viewport dimensions**, usin
 - The opening dialog now focuses the invitation card and traps keyboard Tab focus until the invitation opens.
 - `DESIGN_SPEC.md` records palette, typography, easing, breakpoints, and the MotionSites references studied.
 
-**Verification performed in this iteration:** static preview structure and JavaScript syntax checks; TypeScript/TSX syntax checks for 19 source files; CSS brace balance; and 6 RSVP/security validation tests passed. This environment's browser enforces a policy that prevented loading or rendering a new local preview, so updated screenshots and the full Next.js build are **not claimed as tested**. The screenshots from the prior responsive edition are available for comparison, but do not validate this new motion edition. Run `corepack pnpm install && corepack pnpm build` and visually test at 320px, 390px, 768px and desktop widths before publication.
+**Verification performed in this iteration:** static preview structure and JavaScript syntax checks; TypeScript/TSX syntax checks for 19 source files; CSS brace balance; and 6 RSVP/security validation tests passed. That was the limitation of the earlier motion edition; the **v3.1 standalone preview was subsequently visually tested using inline-content rendering**. A full Next.js build is still unverified. Run `corepack pnpm install && corepack pnpm build` and visually test at 320px, 390px, 768px and desktop widths before publication.
 
 ## Customize the wedding
 

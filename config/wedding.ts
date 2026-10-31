@@ -28,6 +28,8 @@ export const wedding = {
     { time: "TBA", name: "Reception & celebration", detail: "Good food, music and dancing" },
   ],
   dressCode: "To be announced",
+  // Put licensed music under public/audio and update soundtrackOptions in components/Soundtrack.tsx.
+  // The supplied Garden Waltz is an original short demo, not a commercial recording.
   // Example: "2027-05-30"; hide RSVP deadline when not yet set.
   rsvpDeadline: null as string | null,
   contact: "",

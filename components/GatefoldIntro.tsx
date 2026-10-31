@@ -7,6 +7,7 @@ import Image from "next/image";
 import { BotanicalSprig, TinyFlower } from "./Botanicals";
 import { FallingPetals, LivingEmbroidery } from "./LiveFlorals";
 import { wedding } from "@/config/wedding";
+import { MusicPicker } from "./Soundtrack";
 
 type IntroState = "closed" | "opening" | "revealed";
 const STORAGE_KEY = "melanie-marvin-invitation-opened-v1";
@@ -53,6 +54,7 @@ export function GatefoldIntro() {
   function openCard() {
     if (stage !== "closed") return;
     setStage("opening");
+    window.dispatchEvent(new Event("wedding:open-invitation"));
     try { window.sessionStorage.setItem(STORAGE_KEY, "yes"); } catch { /* Still opens */ }
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     timer.current = setTimeout(() => setStage("revealed"), reducedMotion ? 200 : 2450);
@@ -109,6 +111,7 @@ export function GatefoldIntro() {
         {stage === "opening" ? "OPENING WITH LOVE…" : "OPEN OUR INVITATION"}
         <span aria-hidden="true">{stage === "opening" ? "♡" : "›"}</span>
       </button>
+      <MusicPicker variant="intro"/>
       <p className="gatefold-caption">A little note, sent with all our love.</p>
       <div className="gatefold-footer-ornament" aria-hidden="true">— ❧ —</div>
     </div>

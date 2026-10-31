@@ -358,3 +358,163 @@ html, body { background:#f7f3e9; }
   .gatefold-opening .gatefold-scene,.invitation-revealed .hero-center > *,
   .gallery-garden-left,.gallery-garden-right,.gallery-garden-ring {animation:none!important}
 }
+
+/* MELANIE & MARVIN — FULL-BLEED LIVING GARDEN EDITION
+   Hero: edge-to-edge animated botanical frame, never a phone mockup.
+   Scripture: Great Vibes calligraphy; captions retain high-contrast DM Sans.
+   All movement is transform/opacity only and disabled with reduced motion. */
+:root{--script:var(--font-wedding-script),'Brush Script MT','Segoe Script',cursive;--garden-gold:#a78b60}
+html,body{width:100%;max-width:100%;overflow-x:clip;background:#f8f4e9}
+.hero{
+  width:100%;max-width:100dvw;min-height:calc(100dvh - 80px);overflow:hidden;
+  background:radial-gradient(ellipse at 50% 45%,#fffefa 0%,#fcfaf4 42%,#eee9d9 100%);
+  align-items:center;
+}
+.hero:before{inset:clamp(10px,2dvw,28px);border-color:#bca6825e}
+.hero:after{display:none}
+.hero-center{
+  position:relative;z-index:4;padding:clamp(75px,11dvh,126px) 22px clamp(52px,8dvh,95px);
+  width:min(100%,710px);margin:auto;
+  background:radial-gradient(ellipse at 50% 50%,rgba(255,253,246,.9) 3%,rgba(255,253,246,.68) 54%,transparent 76%);
+}
+.hero-center .eyebrow{font-size:clamp(9px,.85dvw,11px);letter-spacing:.33em}
+.hero-intro{font:italic clamp(19px,2.4dvw,27px)/1.2 var(--serif);color:#8a8973;margin:6px 0 13px}
+.hero h1{
+  margin:clamp(9px,2dvh,21px) 0 10px;
+  color:#385442;font:400 clamp(100px,11.5dvw,160px)/.81 var(--script);
+  letter-spacing:-.035em;text-align:center;
+}
+.hero h1 span{display:block;white-space:nowrap;overflow:visible;padding-inline:.1em}
+.hero h1 em{display:block;color:#b99c75;font:italic clamp(40px,4dvw,56px)/.6 var(--serif);margin:12px auto 23px}
+.hero-subtitle{letter-spacing:.35em;font-size:10px;color:#64745d;margin:20px 0 21px}
+.hero-city{margin:9px 0 16px}
+.hero .date-coming-soon{margin-top:0}
+.scroll-cue{margin-top:clamp(20px,4dvh,46px)}
+.garden-corner{position:absolute;display:block;width:clamp(220px,31dvw,475px);height:auto;max-width:none;pointer-events:none;filter:drop-shadow(0 12px 6px #6c76531a)}
+.floral-frame{position:absolute;inset:0;z-index:2;overflow:hidden;pointer-events:none;isolation:isolate}
+.garden-top-left{top:-70px;left:-85px;transform:rotate(-16deg)}
+.garden-top-right{top:-72px;right:-85px;transform:scaleX(-1) rotate(-16deg)}
+.garden-bottom-left{bottom:-105px;left:-90px;transform:scaleY(-1) rotate(-14deg)}
+.garden-bottom-right{bottom:-105px;right:-90px;transform:scale(-1,-1) rotate(-14deg)}
+.garden-cluster-core{transform-origin:40% 35%}
+.garden-bloom{transform-box:fill-box;transform-origin:center}
+.garden-leaf{transform-box:fill-box;transform-origin:bottom center}
+.garden-pollen{position:absolute;width:8px;height:11px;border-radius:90% 10% 60% 40%;background:#d7babc;filter:blur(.3px);opacity:0}
+.garden-pollen-a{top:19%;left:14%}.garden-pollen-b{top:52%;right:9%}.garden-pollen-c{bottom:15%;left:20%}
+@media(prefers-reduced-motion:no-preference){
+  .invitation-revealed .garden-top-left{animation:gardenArriveTL 1.4s cubic-bezier(.17,.71,.2,1) both}
+  .invitation-revealed .garden-top-right{animation:gardenArriveTR 1.75s cubic-bezier(.17,.71,.2,1) .13s both}
+  .invitation-revealed .garden-bottom-left{animation:gardenArriveBL 1.55s cubic-bezier(.17,.71,.2,1) .22s both}
+  .invitation-revealed .garden-bottom-right{animation:gardenArriveBR 1.8s cubic-bezier(.17,.71,.2,1) .28s both}
+  .garden-cluster-core{animation:gardenBreath 9s ease-in-out infinite alternate}
+  .garden-pollen{animation:pollenDrift 9s ease-in-out infinite}
+  .garden-pollen-b{animation-delay:-3s}.garden-pollen-c{animation-delay:-6s}
+}
+@keyframes gardenArriveTL{from{transform:translate3d(-18dvw,-12dvh,0) rotate(-28deg) scale(.78);opacity:.2}to{transform:rotate(-16deg);opacity:1}}
+@keyframes gardenArriveTR{from{transform:translate3d(18dvw,-12dvh,0) scaleX(-1) rotate(-28deg) scale(.78);opacity:.2}to{transform:scaleX(-1) rotate(-16deg);opacity:1}}
+@keyframes gardenArriveBL{from{transform:translate3d(-18dvw,12dvh,0) scaleY(-1) rotate(-28deg) scale(.78);opacity:.2}to{transform:scaleY(-1) rotate(-14deg);opacity:1}}
+@keyframes gardenArriveBR{from{transform:translate3d(18dvw,12dvh,0) scale(-1,-1) rotate(-28deg) scale(.78);opacity:.2}to{transform:scale(-1,-1) rotate(-14deg);opacity:1}}
+@keyframes gardenBreath{from{transform:rotate(-1.6deg) scale(.995)}to{transform:rotate(1.5deg) scale(1.014)}}
+@keyframes pollenDrift{0%,100%{transform:translate3d(0,18px,0) rotate(-20deg);opacity:0}30%{opacity:.65}70%{opacity:.5}90%{transform:translate3d(35px,-60px,0) rotate(40deg);opacity:0}}
+
+/* Small editorial drawings — watercolor accents, not rectangular stock-image cards */
+.soundtrack-feature{
+  display:grid;grid-template-columns:minmax(220px,.85fr) minmax(340px,1fr);
+  align-items:center;gap:clamp(22px,6dvw,90px);max-width:1020px;
+  margin:auto;padding:clamp(65px,8dvw,105px) clamp(25px,6dvw,60px);
+}
+.soundtrack-art{text-align:center;position:relative}
+.soundtrack-art::before{content:"";position:absolute;width:80%;aspect-ratio:1;left:10%;top:0;border:1px solid #dfd1b8;border-radius:50%;background:#f8f3e999;z-index:-1}
+.soundtrack-art img{width:min(100%,345px);height:auto;mix-blend-mode:multiply;filter:drop-shadow(0 8px 5px rgba(87,81,60,.05))}
+.soundtrack-feature h2{font-size:clamp(51px,6dvw,76px);margin:10px 0 18px}
+.soundtrack-feature h2 em{font-family:var(--script);font-style:normal;font-size:1.12em;line-height:.7;color:#967b62}
+.soundtrack-feature-copy>p:not(.eyebrow){font:20px/1.5 var(--serif);color:#717769;max-width:360px}
+.day-watercolor{width:clamp(115px,15dvw,182px);height:auto;display:block;margin:-28px auto 15px;mix-blend-mode:multiply}
+.dress-watercolor{width:clamp(138px,15dvw,195px);height:auto;display:block;margin:0 auto 10px;mix-blend-mode:multiply}
+.day-intro h2 em,.closing h2 em{font-family:var(--script);font-style:normal;font-size:1.12em;color:#967b62;line-height:.8}
+
+/* The guest chooses the soundtrack. Nothing plays before a user gesture. */
+.music-control{position:relative;max-width:min(100%,380px);z-index:11}
+.music-trigger{border:1px solid #b8bda9;background:#fffdf9;color:#3e5641;display:flex;gap:10px;align-items:center;justify-content:center;min-height:44px;padding:12px 19px;border-radius:99px;font-size:11px;font-weight:600;letter-spacing:.075em;transition:background .2s,border-color .2s}
+.music-trigger:hover{background:#f3f0e6;border-color:#867e64}
+.music-chevron{font-size:19px;margin-left:5px;line-height:1}
+.music-choices{position:absolute;z-index:50;left:50%;transform:translateX(-50%);bottom:calc(100% + 10px);width:min(340px,calc(100dvw - 28px));background:#fffdf7;border:1px solid #d6c9ad;box-shadow:0 14px 43px #3b453129;border-radius:15px;padding:14px;color:#373b31;text-align:left}
+.music-picker-label{margin:5px 7px 12px;color:#78836f;font-size:9px;letter-spacing:.16em;font-weight:700}
+.music-choice{width:100%;border:1px solid #e8e2d8;background:#fff;min-height:65px;border-radius:9px;display:flex;align-items:center;text-align:left;gap:11px;padding:10px 12px;margin-bottom:7px;color:#393d33}
+.music-choice.is-active{background:#f9f3e9;border-color:#ac8f61}
+.music-choice-mark{font-size:23px;color:#b18e5b;width:22px;text-align:center}
+.music-choice-copy{display:flex;flex:1;flex-direction:column;gap:2px;min-width:0}
+.music-choice-copy strong{font-size:13px;font-weight:600}
+.music-choice-copy small,.music-length{font-size:10px;color:#767a6b}
+.music-picker-note{font-size:10px;line-height:1.6;color:#788174;margin:9px 6px 3px}
+.music-play-toggle{border:0;background:transparent;border-bottom:1px solid #c3c9b9;color:#516650;padding:7px 2px 4px;margin-left:13px;font-size:11px}
+.music-play-toggle span{padding-left:8px;font-size:16px}
+.music-control-feature{display:flex;align-items:center;gap:7px;margin-top:24px}
+.music-control-feature .music-choices{left:0;transform:none;bottom:auto;top:calc(100% + 8px)}
+.music-control-intro{margin:clamp(7px,1.4dvh,13px) auto 0;z-index:206}
+.music-control-intro .music-trigger{border-color:transparent;background:transparent;font-size:10px;min-height:38px;padding:7px 13px;color:#526958;text-transform:uppercase;letter-spacing:.15em}
+.music-control-intro .music-trigger:hover{background:#e8eadf}
+.music-control-intro .music-choices{bottom:calc(100% + 8px);top:auto}
+.music-dock{position:fixed;bottom:clamp(15px,3dvh,25px);right:clamp(13px,2.5dvw,28px);z-index:25}
+.music-control-dock{display:flex;align-items:center;gap:0}
+.music-control-dock .music-trigger{color:#fff;background:#2d4a39;min-height:44px;border:1px solid #b8c2a7;box-shadow:0 5px 25px #293e3330;font-size:11px}
+.music-control-dock .music-choices{left:auto;right:0;transform:none}
+.music-control-dock .music-play-toggle{border-radius:50%;width:46px;height:46px;background:#fffdf7;box-shadow:0 5px 20px #293e3329;margin-left:5px;border:1px solid #b8c2a7;padding:0;font-size:0}
+.music-control-dock .music-play-toggle span{font-size:17px;padding:0}
+.gatefold-scene{padding-block:clamp(9px,2dvh,25px)}
+.gatefold-stage{width:min(400px,calc(100dvw - 32px),max(158px,calc((100dvh - 270px)*.71)))}
+.gatefold-caption{margin-top:clamp(6px,1.2dvh,17px)}
+.gate-names{font-family:var(--script)!important;letter-spacing:0!important}
+.signature span{font-family:var(--script);font-style:normal;font-size:43px}
+
+@media(max-width:800px){
+  .hero{min-height:calc(100dvh - 69px)}
+  .garden-corner{width:clamp(192px,44dvw,330px)}
+  .garden-top-left{left:-80px;top:-48px}
+  .garden-top-right{right:-80px;top:-48px}
+  .garden-bottom-left{left:-78px;bottom:-85px}
+  .garden-bottom-right{right:-78px;bottom:-85px}
+}
+@media(max-width:680px){
+  .hero-center{padding:clamp(145px,22dvh,200px) 12px clamp(138px,19dvh,190px);max-width:100%}
+  .hero h1{font-size:clamp(72px,18dvw,112px);line-height:.84;margin:13px 0 4px}
+  .hero h1 em{font-size:clamp(27px,7.5dvw,43px);margin:8px auto 15px}
+  .hero-subtitle{font-size:8px;letter-spacing:.24em;margin:15px 0 17px}
+  .hero .ornament{margin:8px auto}
+  .hero-intro{font-size:clamp(18px,5.5dvw,23px);margin:3px 0}
+  .hero-city{font-size:9px;margin:10px 0 14px}
+  .scroll-cue{margin-top:25px}
+  .garden-corner{width:clamp(179px,51dvw,238px);opacity:.94}
+  .garden-top-left{left:-61px;top:-40px}.garden-top-right{right:-61px;top:-40px}
+  .garden-bottom-left{left:-65px;bottom:-67px}.garden-bottom-right{right:-65px;bottom:-67px}
+  .soundtrack-feature{grid-template-columns:1fr;text-align:center;padding:66px 22px 83px;gap:15px}
+  .soundtrack-art img{max-width:220px}
+  .soundtrack-feature-copy>p:not(.eyebrow){margin-inline:auto}
+  .music-control-feature{justify-content:center;margin:18px auto 0}
+  .music-control-feature .music-choices{left:50%;transform:translateX(-50%)}
+  .music-control-feature .music-play-toggle{white-space:nowrap}
+  .day-watercolor{margin-top:-12px}
+  .music-dock{bottom:12px;right:12px}
+  .music-control-dock .music-trigger{padding-inline:13px}
+  .music-control-intro .music-trigger{font-size:9px}
+}
+@media(max-width:375px){
+  .garden-corner{width:183px}
+  .garden-top-left{left:-74px}.garden-top-right{right:-74px}
+  .garden-bottom-left{left:-68px}.garden-bottom-right{right:-68px}
+  .hero-center{padding-top:150px;padding-bottom:144px}
+  .hero h1{font-size:clamp(67px,18.7dvw,78px)}
+  .hero-intro{font-size:17px}
+  .gatefold-stage{width:min(calc(100dvw - 24px),max(148px,calc((100dvh - 272px)*.71)))}
+  .gatefold-caption{font-size:16px}
+}
+@media(max-height:610px){
+  .gatefold-scene{justify-content:flex-start}
+  .gatefold-stage{width:min(calc(100dvw - 28px),max(135px,calc((100dvh - 264px)*.71)))}
+  .gatefold-footer-ornament{display:none}
+  .hero-center{padding-top:90px;padding-bottom:90px}
+  .hero{min-height:600px}
+}
+@media(prefers-reduced-motion:reduce){
+  .garden-corner,.garden-cluster-core,.garden-bloom,.garden-leaf,.garden-pollen{animation:none!important;transition:none!important}
+}

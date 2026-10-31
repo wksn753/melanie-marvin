@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
-import { Cormorant_Garamond, DM_Sans } from "next/font/google";
+import { Cormorant_Garamond, DM_Sans, Great_Vibes } from "next/font/google";
 
 const serif = Cormorant_Garamond({ subsets: ["latin"], variable: "--font-wedding-serif", display: "swap" });
+const script = Great_Vibes({ weight: "400", subsets: ["latin"], variable: "--font-wedding-script", display: "swap" });
 const sans = DM_Sans({ subsets: ["latin"], variable: "--font-wedding-sans", display: "swap" });
 import { wedding } from "@/config/wedding";
 import "./globals.css";
@@ -18,5 +19,5 @@ export const metadata: Metadata = {
 export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   // Per-request rendering is necessary for a nonce-based CSP.
   await headers();
-  return <html lang="en"><body className={`${serif.variable} ${sans.variable}`}>{children}</body></html>;
+  return <html lang="en"><body className={`${serif.variable} ${sans.variable} ${script.variable}`}>{children}</body></html>;
 }

@@ -42,3 +42,14 @@
 - Responsive at 320 / 390 / 768 / 1440 widths; no intentionally horizontal page scroll.
 - All animations have reduced-motion off switches; no cursor-only essential interactions.
 - Server validation and RSVP protection from the previous version remain intact.
+
+
+### Full-bleed botanical edition (v3.1)
+- Mood: intimate, botanical, quietly cinematic.
+- Distinctive interaction: two-panel satin-ribbon gatefold opens into a **full-viewport living-garden frame**; no visual phone device around the invitation.
+- Colors: ivory `#f8f4e9`, forest green `#385442`, rose `#f5dcd6`, sage `#8b9b77`, brushed gold `#a78b60`.
+- Fonts: Great Vibes 400 for couple names, Cormorant Garamond for editorial headings, DM Sans for interface text.
+- Viewport: `.hero` uses `calc(100dvh - header-height)`; card width adjusts against both `100dvw` and `100dvh`.
+- Botanical frame: four independent vector clusters, staggered 1.4–1.8s entrance (ease cubic-bezier(.17,.71,.2,1)), 9s gentle breathing; no layout/paint-heavy JavaScript animation.
+- Audio: default off, user-initiated, original local OGG sample, visible controls and keyboard-operable choices.
+- Accessibility: decorative SVG is aria-hidden, music choices are descriptive buttons, Escape closes selector, reduced-motion disables ambient movement.
