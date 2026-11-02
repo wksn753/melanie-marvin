@@ -16,9 +16,10 @@ type Props = {
 /** Image-backed, 3D side-opening card. All theme paths come from an allowlisted union. */
 export function EmbroideredDoors({ theme = "sage", opening, onOpen, triggerRef, children }: Props) {
   const base = `/art/${theme}`;
+  const photographic = theme === "sage";
   const vars = {
-    "--doors-m": `url("${base}/doors-mobile.svg")`,
-    "--doors-d": `url("${base}/doors-desktop.svg")`,
+    "--doors-m": `url("${base}/${photographic ? "doors-mobile-v9.webp" : "doors-mobile.svg"}")`,
+    "--doors-d": `url("${base}/${photographic ? "doors-desktop-v9.webp" : "doors-desktop.svg"}")`,
     "--bow-m": `url("${base}/bow-mobile.webp")`,
     "--bow-d": `url("${base}/bow-desktop.webp")`,
     "--linen": 'url("/art/linen.webp")',
@@ -26,12 +27,12 @@ export function EmbroideredDoors({ theme = "sage", opening, onOpen, triggerRef, 
 
   return <>
     {/* Preload the matching size only. Next/React may move these into the head. */}
-    <link rel="preload" as="image" href={`${base}/doors-mobile.svg`} media="(max-width: 899px), (orientation: portrait)" />
-    <link rel="preload" as="image" href={`${base}/bow-mobile.webp`} media="(max-width: 899px), (orientation: portrait)" />
-    <link rel="preload" as="image" href={`${base}/doors-desktop.svg`} media="(min-width: 900px) and (orientation: landscape)" />
-    <link rel="preload" as="image" href={`${base}/bow-desktop.webp`} media="(min-width: 900px) and (orientation: landscape)" />
+    <link rel="preload" as="image" href={`${base}/${photographic ? "doors-mobile-v9.webp" : "doors-mobile.svg"}`} media="(max-width: 899px), (orientation: portrait)" />
+    {!photographic && <link rel="preload" as="image" href={`${base}/bow-mobile.webp`} media="(max-width: 899px), (orientation: portrait)" />}
+    <link rel="preload" as="image" href={`${base}/${photographic ? "doors-desktop-v9.webp" : "doors-desktop.svg"}`} media="(min-width: 900px) and (orientation: landscape)" />
+    {!photographic && <link rel="preload" as="image" href={`${base}/bow-desktop.webp`} media="(min-width: 900px) and (orientation: landscape)" />}
 
-    <div className={`${s.stage} ${opening ? s.open : ""}`} style={vars}>
+    <div className={`${s.stage} ${photographic ? s.photographic : ""} ${opening ? s.open : ""}`} style={vars}>
       <div className={s.content}>{children}</div>
       <div className={s.doors} aria-hidden="true">
         <div className={`${s.panel} ${s.left}`}><div className={s.bow}/></div>

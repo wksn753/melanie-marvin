@@ -132,3 +132,29 @@
 @media (prefers-reduced-motion: reduce) {
   .panel, .bow, .triggerText { transition-duration: .01ms; transition-delay: 0ms; }
 }
+
+/* V9: the approved photographic flowers, linen and ivory chiffon bow are
+   a single composed image. No extra ribbon or linen overlay may obscure them. */
+.photographic .panel::before,
+.photographic .panel::after,
+.photographic .bow { display: none; }
+.photographic .panel { background-color: #f6e9d5; }
+.photographic .triggerText {
+  bottom: clamp(42px, 10dvh, 110px);
+  padding: 15px 25px;
+  border-radius: 999px;
+  border: 1px solid #b49a64;
+  background: #304a31;
+  font: 600 clamp(11px, 1.35dvw, 14px)/1.4 Georgia, serif;
+  letter-spacing: .075em;
+  box-shadow: 0 8px 20px rgba(65,40,18,.22);
+}
+.photographic .trigger:hover .triggerText { background: #3d5b3f; }
+@media (max-width: 899px), (orientation: portrait) {
+  .photographic .triggerText {
+    bottom: clamp(36px, 12dvh, 125px);
+    min-width: min(248px, calc(100dvw - 35px));
+    padding: 15px 19px;
+    font-size: 12px;
+  }
+}
