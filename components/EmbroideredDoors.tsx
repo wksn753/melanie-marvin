@@ -19,17 +19,17 @@ export function EmbroideredDoors({ theme = "sage", opening, onOpen, triggerRef, 
   const vars = {
     "--doors-m": `url("${base}/doors-mobile.svg")`,
     "--doors-d": `url("${base}/doors-desktop.svg")`,
-    "--bow-m": `url("${base}/bow-mobile.svg")`,
-    "--bow-d": `url("${base}/bow-desktop.svg")`,
+    "--bow-m": `url("${base}/bow-mobile.webp")`,
+    "--bow-d": `url("${base}/bow-desktop.webp")`,
     "--linen": 'url("/art/linen.webp")',
   } as CSSProperties;
 
   return <>
     {/* Preload the matching size only. Next/React may move these into the head. */}
     <link rel="preload" as="image" href={`${base}/doors-mobile.svg`} media="(max-width: 899px), (orientation: portrait)" />
-    <link rel="preload" as="image" href={`${base}/bow-mobile.svg`} media="(max-width: 899px), (orientation: portrait)" />
+    <link rel="preload" as="image" href={`${base}/bow-mobile.webp`} media="(max-width: 899px), (orientation: portrait)" />
     <link rel="preload" as="image" href={`${base}/doors-desktop.svg`} media="(min-width: 900px) and (orientation: landscape)" />
-    <link rel="preload" as="image" href={`${base}/bow-desktop.svg`} media="(min-width: 900px) and (orientation: landscape)" />
+    <link rel="preload" as="image" href={`${base}/bow-desktop.webp`} media="(min-width: 900px) and (orientation: landscape)" />
 
     <div className={`${s.stage} ${opening ? s.open : ""}`} style={vars}>
       <div className={s.content}>{children}</div>

@@ -4,7 +4,7 @@ import { existsSync, statSync } from 'node:fs';
 const themes = ['sage','rose','lavender'];
 const assets = ['/botanicals/top-left.svg','/botanicals/top-right.svg','/botanicals/bottom-left.svg','/botanicals/bottom-right.svg'];
 for (const theme of themes) for (const mode of ['desktop','mobile']) {
-  assets.push(`/art/${theme}/doors-${mode}.svg`, `/art/${theme}/bow-${mode}.svg`);
+  assets.push(`/art/${theme}/doors-${mode}.svg`, `/art/${theme}/bow-${mode}.webp`);
 }
 for (const asset of assets) {
   const filename = `public${asset}`;
@@ -13,4 +13,4 @@ for (const asset of assets) {
     process.exitCode = 1;
   }
 }
-if (!process.exitCode) console.log(`All ${assets.length} vector assets are present and sharp.`);
+if (!process.exitCode) console.log(`All ${assets.length} gatefold and botanical assets are present.`);
