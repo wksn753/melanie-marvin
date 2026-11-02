@@ -29,5 +29,5 @@ export function proxy(request: NextRequest) {
 
 export const config = {
   // Exclude API and static assets. Authorization is always inside each API handler.
-  matcher: ["/((?!api/|_next/|favicon.ico|robots.txt|images/|photos/|illustrations/|audio/).*)"],
+  matcher: ["/((?!api/|_next/|favicon.ico|robots.txt|images/|photos/|illustrations/|audio/|art/).*)"],
 };

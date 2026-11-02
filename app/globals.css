@@ -691,3 +691,38 @@ footer a {display:inline-flex;align-items:center;gap:8px}
 @media(prefers-reduced-motion:reduce){
   .story-photo-interlude-image img,.story-gallery-photo img{transition:none}
 }
+
+/* V6: Full-screen photographic embroidery, retaining the existing wedding page. */
+.gatefold-art-overlay { display: block; position: fixed; padding: 0; inset: 0; overflow: hidden; background: #f5eddd; }
+.gatefold-art-message {
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  width:min(94%,650px); min-height:100%; padding:clamp(46px,11dvh,120px) 12px 65px;
+  margin:auto; color:#354a3c; text-align:center;
+}
+.gatefold-art-eyebrow,.gatefold-art-subtitle { font:600 clamp(8px,1.2vw,12px)/1.5 var(--sans);letter-spacing:.25em;color:#7c806b; }
+.gatefold-art-flourish{display:flex;align-items:center;gap:16px;margin:18px 0;color:#ae9670}
+.gatefold-art-flourish span{width:35px;height:1px;background:#bda787}
+.gatefold-art-flourish svg{width:25px;height:25px}
+.gatefold-art-message p{font:italic clamp(18px,2.6vw,29px)/1.4 var(--serif);color:#8a785f;margin:8px 0}
+.gatefold-art-message h1{font:400 clamp(61px,7.8vw,115px)/.91 var(--font-wedding-script),var(--serif);letter-spacing:.01em;margin:10px 0 25px;text-shadow:0 2px 4px #fff7}
+.gatefold-art-message h1 em{display:block;font:italic .52em var(--serif);color:#ab936f;padding:6px 0}
+.gatefold-art-subtitle{letter-spacing:.13em;font-size:clamp(8px,1vw,11px);max-width:310px}
+.gatefold-art-message strong{font:500 clamp(18px,2.7vw,29px)/1.2 var(--serif);margin:18px 0 12px;letter-spacing:.06em}
+.gatefold-art-location{font:500 clamp(9px,1.1vw,12px)/1.55 var(--sans);letter-spacing:.10em;color:#626f5d;margin-bottom:5px}
+.gatefold-art-continue{margin-top:30px;font:600 9px/1.5 var(--sans);letter-spacing:.20em;color:#82917c}
+.gatefold-art-music{position:fixed;right:clamp(10px,3dvw,35px);top:max(10px,env(safe-area-inset-top));z-index:220}
+.gatefold-art-music .music-control-intro{margin:0}
+.gatefold-art-music .music-trigger{background:#faf7f0f2;border:1px solid #d5c4a8;box-shadow:0 2px 12px #54452f22;border-radius:30px;min-height:42px}
+.gatefold-art-music .music-choices{top:calc(100% + 7px);bottom:auto;left:auto;right:0;transform:none}
+@media(max-width:700px){
+ .gatefold-art-message {padding:62px 14px 75px}
+ .gatefold-art-message h1 {font-size:clamp(61px,16vw,84px)}
+ .gatefold-art-music{top:max(7px,env(safe-area-inset-top));right:8px}
+ .gatefold-art-music .music-trigger{padding:8px 12px;min-height:35px;max-width:45dvw;font-size:9px;letter-spacing:.03em}
+ .gatefold-art-music .music-choices{width:min(310px,calc(100dvw - 20px))}
+}
+@media(max-height:530px) and (orientation:landscape){
+ .gatefold-art-message{padding:18px 10px;min-height:600px}
+ .gatefold-art-message h1{font-size:70px}
+ .gatefold-art-message strong{margin:8px 0}
+}

@@ -1,0 +1,119 @@
+/* The cover is full-bleed; viewport units are dynamic so mobile browser chrome does not crop it. */
+.stage {
+  --doors: var(--doors-m);
+  --ribbon: var(--bow-m);
+  position: relative;
+  width: 100dvw;
+  height: 100dvh;
+  min-height: 0;
+  overflow: hidden;
+  isolation: isolate;
+  perspective: 1800px;
+  background: #f3ecdd;
+}
+.content {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: #f9f3e7 var(--linen) center / 300px repeat;
+}
+.doors {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  pointer-events: none;
+  z-index: 5;
+  transform-style: preserve-3d;
+}
+.panel {
+  position: relative;
+  flex: 0 0 50%;
+  height: 100%;
+  background-color: #f0e8d9;
+  background-image: var(--doors);
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 1.65s cubic-bezier(.7,0,.2,1) .36s;
+}
+.left { transform-origin: left center; background-position: left top; box-shadow: inset -4px 0 5px #54432b30; }
+.right { transform-origin: right center; background-position: right top; box-shadow: inset 4px 0 5px #54432b30; }
+.panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: .13;
+  background-image: var(--linen);
+  background-size: 256px;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+.bow {
+  position: absolute;
+  inset: 0;
+  background-image: var(--ribbon);
+  background-position: left top;
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+  filter: drop-shadow(0 4px 4px #3b2c1b48) drop-shadow(0 12px 14px #3b2c1b25);
+  transition: transform .8s ease, opacity .65s ease;
+  z-index: 3;
+}
+.right .bow { background-position: right top; }
+.trigger {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 8;
+  padding: 0 15px env(safe-area-inset-bottom, 0px);
+  border: 0;
+  background: transparent;
+  color: #fffdf5;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.triggerText {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(28px, 7dvh, 90px);
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 17px 23px;
+  min-height: 48px;
+  min-width: min(245px, calc(100dvw - 36px));
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  font: 600 clamp(9px, 1.45dvw, 11px)/1.35 Arial, sans-serif;
+  background: #304a3a;
+  border: 1px solid #c6b796;
+  box-shadow: 0 10px 30px #291f1638;
+  transition: background .25s ease, transform .25s ease, opacity .4s ease;
+}
+.trigger:hover .triggerText { background: #42604a; }
+.trigger:focus-visible { outline: 3px solid #b59d73; outline-offset: -6px; }
+.open .left { transform: rotateY(-105deg); }
+.open .right { transform: rotateY(105deg); }
+.open .bow { opacity: 0; transform: translateY(-16px) scale(1.04); }
+.open .trigger { pointer-events: none; }
+.open .triggerText { opacity: 0; }
+
+@media (min-width: 900px) and (orientation: landscape) {
+  .stage { --doors: var(--doors-d); --ribbon: var(--bow-d); }
+  .triggerText { bottom: clamp(22px, 7dvh, 76px); }
+}
+@media (max-width: 360px) {
+  .triggerText { padding: 13px 15px; min-width: 205px; font-size: 9px; bottom: 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .panel, .bow, .triggerText { transition-duration: .01ms; transition-delay: 0ms; }
+}
