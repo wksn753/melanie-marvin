@@ -15,7 +15,7 @@ type AudioControls = { selected: Track; playing: boolean; select: (next: Track, 
 const SoundtrackContext = createContext<AudioControls | null>(null);
 
 export function SoundtrackProvider({ children }: { children: ReactNode }) {
-  const [selected, setSelected] = useState<Track>("none");
+  const [selected, setSelected] = useState<Track>("garden");
   const [playing, setPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -31,7 +31,7 @@ export function SoundtrackProvider({ children }: { children: ReactNode }) {
     if (next === "none") { pause(); if (audioRef.current) audioRef.current.currentTime = 0; }
     else if (playImmediately) play();
   }
-  function toggle() { if (playing) pause(); else if (selected === "garden") play(); else select("garden"); }
+  function toggle() { if (playing) pause(); else if (selected === "garden") play(); else select("garden", true); }
 
   useEffect(() => {
     const onOpening = () => {
@@ -44,7 +44,7 @@ export function SoundtrackProvider({ children }: { children: ReactNode }) {
 
   return <SoundtrackContext.Provider value={{ selected, playing, select, toggle }}>
     {children}
-    <audio ref={audioRef} src="/audio/garden-waltz.ogg" preload="none" loop onPause={() => setPlaying(false)} onPlay={() => setPlaying(true)} aria-label="Garden Waltz instrumental wedding music" />
+    <audio ref={audioRef} preload="metadata" loop onPause={() => setPlaying(false)} onPlay={() => setPlaying(true)} aria-label="Garden Waltz instrumental wedding music"><source src="/audio/garden-waltz.mp3" type="audio/mpeg"/><source src="/audio/garden-waltz.ogg" type="audio/ogg"/></audio>
   </SoundtrackContext.Provider>;
 }
 
@@ -54,7 +54,7 @@ function useSoundtrack() {
   return value;
 }
 
-/** An explicit choice, never surprise autoplay. Also works on iOS after a tap. */
+/** Music starts on the guest’s Open Invitation tap, then has persistent controls. */
 export function MusicPicker({ variant = "feature" }: { variant?: "intro" | "feature" | "dock" }) {
   const { selected, playing, select, toggle } = useSoundtrack();
   const [open, setOpen] = useState(false);
@@ -72,7 +72,7 @@ export function MusicPicker({ variant = "feature" }: { variant?: "intro" | "feat
         <span className="music-choice-copy"><strong>{track.title}</strong><small>{track.subtitle}</small></span>
         <small className="music-length">{track.length}</small>
       </button>)}
-      <p className="music-picker-note">Music starts only when you choose it. You can switch it off any time.</p>
+      <p className="music-picker-note">The selected song begins when you open the invitation. You can pause or turn it off at any time.</p>
     </div>}
     {selected !== "none" && variant !== "intro" && <button className="music-play-toggle" type="button" onClick={toggle} aria-label={playing ? "Pause wedding music" : "Play wedding music"}>{playing ? "Pause" : "Play"}<span aria-hidden="true"><Icon name={playing ? "pause" : "play"} size={15}/></span></button>}
   </div>;

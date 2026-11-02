@@ -47,7 +47,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  opacity: .13;
+  opacity: .08;
   background-image: var(--linen);
   background-size: 256px;
   mix-blend-mode: multiply;
@@ -60,7 +60,7 @@
   background-position: left top;
   background-size: 200% 100%;
   background-repeat: no-repeat;
-  filter: drop-shadow(0 4px 4px #3b2c1b48) drop-shadow(0 12px 14px #3b2c1b25);
+  filter: drop-shadow(0 2px 3px #3b2c1b40) drop-shadow(0 10px 12px #3b2c1b1e);
   transition: transform .8s ease, opacity .65s ease;
   z-index: 3;
 }

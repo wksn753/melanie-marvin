@@ -726,3 +726,14 @@ footer a {display:inline-flex;align-items:center;gap:8px}
  .gatefold-art-message h1{font-size:70px}
  .gatefold-art-message strong{margin:8px 0}
 }
+
+/* V7: intrinsic vector artwork: sharp at any device pixel ratio. No raster stretching. */
+.floral-frame-painted .floral-corner img { object-fit: contain; image-rendering: auto; filter: none; }
+.floral-frame-painted .floral-corner { isolation: isolate; }
+@media (min-width: 900px) {
+  .floral-top-left,.floral-top-right { width: clamp(220px, 25dvw, 410px); height: clamp(230px, 28dvw, 420px); }
+  .floral-bottom-left,.floral-bottom-right { width: clamp(190px, 22dvw, 340px); height: clamp(200px, 25dvw, 375px); }
+}
+@media (max-width: 680px) {
+  .floral-frame-painted .floral-corner { opacity: .90; }
+}
