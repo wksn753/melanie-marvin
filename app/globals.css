@@ -788,3 +788,108 @@ footer a {display:inline-flex;align-items:center;gap:8px}
     height:clamp(117px,40vw,160px);
   }
 }
+
+/* V12 — heirloom photograph frame. Physical moulding, archival mat and a subtle
+   glass sheen; the original photograph remains sharp and unaltered. */
+.photo-intro-wall {
+  min-width: 0;
+  display: grid;
+  place-items: center;
+  padding: clamp(38px, 6.3dvw, 90px) clamp(22px, 5dvw, 78px);
+  background:
+    radial-gradient(ellipse at 47% 42%, rgba(255,255,255,.65), transparent 65%),
+    linear-gradient(118deg, #e5e2d9 0%, #f0ede5 47%, #dfdcd2 100%);
+  isolation: isolate;
+}
+.photo-intro-picture-frame {
+  width: min(100%, 615px);
+  margin: 0;
+  position: relative;
+  transform: rotate(-1.65deg);
+  transition: transform .7s cubic-bezier(.2,.75,.2,1);
+  filter: drop-shadow(18px 27px 15px rgba(51,45,35,.18));
+}
+.photo-intro-picture-frame:hover { transform: rotate(-.55deg) translateY(-4px) }
+.photo-intro-frame-moulding {
+  position: relative;
+  padding: clamp(10px, 1.35dvw, 19px);
+  border: 1px solid #ac9879;
+  border-radius: 2px;
+  background:
+    linear-gradient(139deg, #fff8e8 0%, #d0b996 13%, #f7e9ce 23%, #ab9069 47%, #f3dfb8 71%, #907751 100%);
+  box-shadow:
+    inset 2px 2px 2px rgba(255,255,255,.9),
+    inset -3px -3px 4px rgba(71,52,29,.52),
+    0 0 0 1px rgba(126,99,62,.52),
+    2px 6px 4px rgba(68,53,36,.2),
+    0 20px 36px rgba(55,50,37,.13);
+}
+.photo-intro-frame-moulding::before {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  inset: clamp(5px, .7dvw, 10px);
+  border: 1px solid rgba(252,239,204,.85);
+  box-shadow: 0 0 0 1px rgba(82,64,41,.26);
+  z-index: 2;
+}
+.photo-intro-frame-mat {
+  position: relative;
+  padding: clamp(13px, 1.7dvw, 25px);
+  background: linear-gradient(130deg, #f4efe3, #fffdf5 49%, #ece7db);
+  box-shadow:
+    inset 3px 4px 7px rgba(103,88,69,.27),
+    inset -1px -1px 2px rgba(255,255,255,.95);
+}
+.photo-intro-frame-mat::after {
+  content: "";
+  position: absolute;
+  inset: clamp(12px, 1.65dvw, 24px);
+  border: 3px solid rgba(154,126,88,.23);
+  box-shadow: inset 1px 2px 5px rgba(32,28,25,.18);
+  pointer-events: none;
+  z-index: 3;
+}
+.photo-intro-picture-frame .photo-intro-image {
+  position: relative;
+  width: 100%;
+  min-height: 0;
+  aspect-ratio: 1.24;
+  overflow: hidden;
+  background: #a2a9a6;
+}
+.photo-intro-picture-frame .photo-intro-image img {
+  object-fit: cover;
+  object-position: 49% 43%;
+  transition: none;
+  transform: none;
+}
+/* A low-opacity glass reflection makes the frame read as an object, not a card. */
+.photo-intro-picture-frame .photo-intro-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(125deg, rgba(255,255,255,.135) 0%, rgba(255,255,255,.035) 26%, transparent 43%, transparent 100%);
+}
+.photo-intro-picture-frame:hover .photo-intro-image img { transform: none }
+.photo-intro-frame-caption {
+  margin: 19px auto 0;
+  text-align: center;
+  font: italic clamp(14px, 1.35dvw, 19px)/1.35 var(--serif);
+  letter-spacing: .03em;
+  color: #8d8374;
+}
+@media (max-width: 700px) {
+  .photo-intro-wall { padding: 44px clamp(22px, 7dvw, 48px) 39px }
+  .photo-intro-picture-frame { width: min(100%, 480px); transform: rotate(-1deg) }
+  .photo-intro-frame-moulding { padding: clamp(9px, 2.7dvw, 15px) }
+  .photo-intro-frame-mat { padding: clamp(10px, 3.3dvw, 18px) }
+  .photo-intro-frame-mat::after { inset: clamp(9px, 3.15dvw, 17px); border-width: 2px }
+  .photo-intro-picture-frame .photo-intro-image { aspect-ratio: 1.3 }
+  .photo-intro-frame-caption { margin-top: 18px }
+}
+@media (prefers-reduced-motion: reduce) {
+  .photo-intro-picture-frame { transition: none }
+}

@@ -57,8 +57,17 @@ export default function Home() {
       </section>
 
       <section className="photo-intro" aria-label="Marvin and Melanie's first photo chapter">
-        <div className="photo-intro-image" data-reveal="up">
-          <Image src="/photos/marvin-melanie-laughter.webp" alt="Marvin carrying Melanie beside the water as they share a playful moment" fill priority={false} sizes="(max-width: 700px) 100vw, 58vw" />
+        <div className="photo-intro-wall" data-reveal="up">
+          <figure className="photo-intro-picture-frame">
+            <div className="photo-intro-frame-moulding">
+              <div className="photo-intro-frame-mat">
+                <div className="photo-intro-image">
+                  <Image src="/photos/marvin-melanie-laughter.webp" alt="Marvin carrying Melanie by the water as they laugh together" fill priority={false} sizes="(max-width: 700px) 84vw, (max-width: 1100px) 43vw, 41vw" />
+                </div>
+              </div>
+            </div>
+            <figcaption className="photo-intro-frame-caption">A favourite moment, beautifully kept</figcaption>
+          </figure>
         </div>
         <div className="photo-intro-copy" data-reveal="right">
           <p className="eyebrow">01 / LITTLE JOYS</p>
